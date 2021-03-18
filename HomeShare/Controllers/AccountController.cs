@@ -40,13 +40,13 @@ namespace HomeShare.Controllers
                 else
                 {
                     ViewBag.Error = "Erreur Login/Password";
-                    return View("Login");
+                    return View();
                 }
             }
             else
             {
                 ViewBag.Error = "Erreur Login/Password";
-                return View("Login");
+                return View();
             }
         }
     }
