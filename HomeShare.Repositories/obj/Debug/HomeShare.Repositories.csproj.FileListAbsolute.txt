@@ -1,0 +1,13 @@
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\bin\Debug\HomeShare.Repositories.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\bin\Debug\HomeShare.Repositories.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\bin\Debug\HomeShare.DAL.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\bin\Debug\HomeShare.Entities.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\bin\Debug\HomeShare.Models.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\bin\Debug\HomeShare.DAL.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\bin\Debug\HomeShare.Entities.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\bin\Debug\HomeShare.Models.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\obj\Debug\HomeShare.Repositories.csprojAssemblyReference.cache
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\obj\Debug\HomeShare.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\obj\Debug\HomeShare.Repositories.csproj.CopyComplete
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\obj\Debug\HomeShare.Repositories.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Repositories\obj\Debug\HomeShare.Repositories.pdb

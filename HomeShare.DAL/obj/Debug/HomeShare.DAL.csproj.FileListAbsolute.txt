@@ -1,0 +1,6 @@
+C:\Users\sorel\source\repos\HomeShare\HomeShare.DAL\bin\Debug\HomeShare.DAL.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.DAL\bin\Debug\HomeShare.DAL.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare.DAL\obj\Debug\HomeShare.DAL.csprojAssemblyReference.cache
+C:\Users\sorel\source\repos\HomeShare\HomeShare.DAL\obj\Debug\HomeShare.DAL.csproj.CoreCompileInputs.cache
+C:\Users\sorel\source\repos\HomeShare\HomeShare.DAL\obj\Debug\HomeShare.DAL.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.DAL\obj\Debug\HomeShare.DAL.pdb

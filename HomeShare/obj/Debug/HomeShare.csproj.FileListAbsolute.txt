@@ -84,3 +84,11 @@ C:\Users\sorel\source\repos\HomeShare\HomeShare\obj\Debug\HomeShare.csproj.CoreC
 C:\Users\sorel\source\repos\HomeShare\HomeShare\obj\Debug\HomeShare.csproj.CopyComplete
 C:\Users\sorel\source\repos\HomeShare\HomeShare\obj\Debug\HomeShare.dll
 C:\Users\sorel\source\repos\HomeShare\HomeShare\obj\Debug\HomeShare.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare\bin\HomeShare.Models.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare\bin\HomeShare.Repositories.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare\bin\HomeShare.DAL.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare\bin\HomeShare.Entities.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare\bin\HomeShare.Models.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare\bin\HomeShare.Repositories.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare\bin\HomeShare.DAL.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare\bin\HomeShare.Entities.pdb

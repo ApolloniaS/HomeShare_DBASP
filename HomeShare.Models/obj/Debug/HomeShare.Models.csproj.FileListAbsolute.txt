@@ -1,0 +1,6 @@
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Models\bin\Debug\HomeShare.Models.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Models\bin\Debug\HomeShare.Models.pdb
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Models\obj\Debug\HomeShare.Models.csprojAssemblyReference.cache
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Models\obj\Debug\HomeShare.Models.csproj.CoreCompileInputs.cache
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Models\obj\Debug\HomeShare.Models.dll
+C:\Users\sorel\source\repos\HomeShare\HomeShare.Models\obj\Debug\HomeShare.Models.pdb
