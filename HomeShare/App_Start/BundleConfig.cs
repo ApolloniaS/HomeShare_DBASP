@@ -27,8 +27,8 @@ namespace HomeShare
             //          "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/css/base-css").Include(
-                "~/css/main-style.css",
-                "~/Content/bootstrap.css"));
+                "~/Content/bootstrap.css",
+                "~/css/main-style.css"));
 
             bundles.Add(new StyleBundle("~/css/owlcarousel-css").Include(
                 "~/css/owl.carousel.css",
