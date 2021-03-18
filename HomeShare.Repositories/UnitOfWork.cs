@@ -14,6 +14,7 @@ namespace HomeShare.Repositories
         IConcreteRepository<BienEchangeEntity> _bienEchangeRepo;
         IConcreteRepository<MembreEntity> _membreRepo;
 
+
         public UnitOfWork(string connectionString)
         {
             _bienEchangeRepo = new BienEchangeRepository(connectionString);
@@ -89,7 +90,26 @@ namespace HomeShare.Repositories
                     }
                     ).ToList();
         }
-    #endregion
+        #endregion
+
+        #region INSCRIPTION ET CONNEXION
+        public bool SignUp(MembreModel mm)
+        {
+            MembreEntity me = new MembreEntity()
+            { 
+                Nom = mm.Nom,
+                Prenom = mm.Nom,
+                Email = mm.Email,
+                Telephone = mm.Telephone,
+                Login = mm.Login,
+                Password = mm.Password,
+                Pays = mm.Pays
+
+            };
+
+            return _membreRepo.Insert(me);
+        }
+        #endregion
 
 
     }

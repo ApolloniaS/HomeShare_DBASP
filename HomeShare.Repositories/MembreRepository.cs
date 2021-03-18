@@ -31,7 +31,15 @@ namespace HomeShare.Repositories
 
         public bool Insert(MembreEntity toInsert)
         {
-            throw new NotImplementedException();
+            string requete = @"EXEC [dbo].[SP_Ajout_User]
+            @nom,
+            @prenom,
+            @email,
+            @tel,
+            @login,
+            @password,
+            @pays";
+            return base.Insert(toInsert, requete);
         }
 
         public bool Update(MembreEntity toUpdate)
