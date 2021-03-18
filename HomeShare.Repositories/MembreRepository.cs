@@ -10,6 +10,14 @@ namespace HomeShare.Repositories
 {
     public class MembreRepository : BaseRepository<MembreEntity>, IConcreteRepository<MembreEntity>
     {
+
+        public MembreEntity GetFromLogin(string login)
+        {
+            //sans la vérif du password, à faire si temps
+            Dictionary<string, object> p = new Dictionary<string, object>();
+            p.Add("login", login);
+            return base.Get("Select * from [Membre] where Login=@login", p).FirstOrDefault();
+        }
         public MembreRepository(string connectionString) : base(connectionString)
         {
         }

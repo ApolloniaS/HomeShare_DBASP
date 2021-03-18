@@ -216,6 +216,7 @@
     <Content Include="Views\Home\Biens.cshtml" />
     <Content Include="Views\Shared\_cartesBiens.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

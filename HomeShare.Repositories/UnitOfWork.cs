@@ -93,6 +93,7 @@ namespace HomeShare.Repositories
         #endregion
 
         #region INSCRIPTION ET CONNEXION
+        //inscription
         public bool SignUp(MembreModel mm)
         {
             MembreEntity me = new MembreEntity()
@@ -108,6 +109,27 @@ namespace HomeShare.Repositories
             };
 
             return _membreRepo.Insert(me);
+        }
+
+        //connexion
+        public MembreModel SignIn(LoginModel lm)
+        {
+            MembreEntity me = ((MembreRepository)_membreRepo).GetFromLogin(lm.Login);
+            if (me == null) return null;
+
+            if (me != null)
+            {
+                return new MembreModel()
+                {
+                    IdMembre = me.IdMembre,
+                    Login = me.Login,
+                    Password = me.Password,
+                };
+            }
+            else
+            {
+                return null;
+            }
         }
         #endregion
 

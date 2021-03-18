@@ -20,6 +20,38 @@ namespace HomeShare.Controllers
         }
 
         [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginModel lm)
+        {
+            if (ModelState.IsValid)
+            {
+                MembreModel mm = uow.SignIn(lm);
+                if (mm == null)
+                {
+                    ViewBag.Error = "Erreur Login/Password";
+                    return View();
+                }
+                else
+                {
+                    SessionUtils.IsLogged = true;
+                    SessionUtils.ConnectedUser = mm;
+                    return RedirectToAction("Index", "Home", new { area = "Membre" });
+                }
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+        [HttpGet]
         public ActionResult Register()
         {
             return View();
@@ -27,14 +59,14 @@ namespace HomeShare.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(MembreModel um)
+        public ActionResult Register(MembreModel mm)
         {
             if (ModelState.IsValid)
             {
-                if (uow.SignUp(um))
+                if (uow.SignUp(mm))
                 {
                     SessionUtils.IsLogged = true;
-                    SessionUtils.ConnectedUser = um;
+                    SessionUtils.ConnectedUser = mm;
                     return RedirectToAction("Index", "Home", new { area = "Membre" });
                 }
                 else
