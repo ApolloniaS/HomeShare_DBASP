@@ -22,7 +22,7 @@
                 <div><img src="@item.Drapeau" /></div>
                 <div>@item.NomPays</div>
             </div>
-            <a href="/Home/Fiche">Selectionner ce bien</a>
+            <a href="@Url.Action("Fiche", "Home", new { idBien = item.IdBien })">Sélectionner ce bien</a>
         </div>
     }
 </div>

@@ -1,23 +1,36 @@
-﻿@model HomeShare.Models.BiensViewModel
+﻿@model HomeShare.Models.FicheViewModel
 @{
     ViewBag.Title = "Fiche";
 }
 
 <div class="inside-banner">
     <div class="container">
-        <span class="pull-right"><a href="/Home/Index">Home</a> / Bien sélectionné</span>
+        <span class="pull-right"><a href="/Home/Index">Home</a> / @Model.Fiche.Titre</span>
     </div>
 </div>
 
-Coucou je suis une fiche
-test:
-@foreach (HomeShare.Models.BienAEchangerModel item in Model.TousLesBiens)
-{ @item.Fiche.Photo<br/>
-    @item.Fiche.Titre<br />
-    @item.Fiche.NombrePersonnes<br />
-    @item.Fiche.DescLongue<br />
-    @item.Fiche.Drapeau<br />
+<div class="container-fiche-custo" style="display:flex">
+    <div class="container-gauche-custo" style="width:70%;border:1px black solid;">
+        <div class="info-biens" style="display:flex;background-color:lightgray;justify-content:space-between;padding:1%;">
+            <div><img style="width: 150px;height:100px;" src="@Model.Fiche.Photo"/></div>
+            <div style="display:flex;padding:1%;">
+                <div>
+                    @Model.Fiche.Titre
+                    <br />
+                    @Model.Fiche.NombrePersonnes personnes
+                    <br />
+                    Description&nbsp;:<br/>
+                    <div style="border:1px solid black; background-color:lightblue;">@Model.Fiche.DescLongue</div>
+                    Options&nbsp;:
+                    Insérer options ici
+                </div>
+            <div style="padding: 1%;"><img src="@Model.Fiche.Drapeau" /></div>
+         </div>
+        </div>
+        <div class="avis-biens" style="margin-top:1%;">Les avis des membres</div>
+    </div>
+    <div class="info-proprio" style="width: 30%;border:1px black solid;">partie proprio</div>
+</div>
 
-}
 
 

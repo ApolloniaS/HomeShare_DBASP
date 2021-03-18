@@ -20,6 +20,15 @@ namespace HomeShare.Repositories
             return base.GetOne(idPays, requete);
         }
 
+        public PaysEntity obtenirDrapeauDepuisIdBien(int idBien)
+        {
+            //TODO: générer une vue qui reprend cette requête, plus dRY !
+            string requete = @"SELECT BienEchange.idBien, Pays.drapeau 
+                                FROM BienEchange INNER JOIN Pays ON BienEchange.Pays = Pays.idPays 
+                                WHERE idBien =" + idBien;
+            return base.GetOne(idBien, requete);
+        }
+
         public bool Delete(PaysEntity toDelete)
         {
             throw new NotImplementedException();

@@ -10,13 +10,13 @@ namespace HomeShare.Models
     public class FicheViewModel
     {
         UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
-        private List<BienAEchangerModel> _fiche;
+        private FicheModel _fiche;
 
-        public FicheViewModel()
+        public FicheViewModel(int id)
         {
-            Fiche = uow.obtenirTousLesBiens();
+            Fiche = uow.genererFiche(id);
         }
 
-        public List<BienAEchangerModel> Fiche { get => _fiche; set => _fiche = value; }
+        public FicheModel Fiche { get => _fiche; set => _fiche = value; }
     }
 }

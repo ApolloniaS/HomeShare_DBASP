@@ -26,7 +26,8 @@ namespace HomeShare.Repositories
 
         public FicheEntity GetOne(int PK)
         {
-            throw new NotImplementedException();
+            string requete = "SELECT * FROM BienEchange WHERE idBien = " + PK;
+            return base.GetOne(PK, requete);
         }
 
         public bool Insert(FicheEntity toInsert)

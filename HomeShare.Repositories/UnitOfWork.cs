@@ -14,6 +14,8 @@ namespace HomeShare.Repositories
         IConcreteRepository<BienEchangeEntity> _bienEchangeRepo;
         IConcreteRepository<MembreEntity> _membreRepo;
         IConcreteRepository<PaysEntity> _paysRepo;
+        IConcreteRepository<FicheEntity> _ficheRepo;
+
 
 
         public UnitOfWork(string connectionString)
@@ -21,6 +23,8 @@ namespace HomeShare.Repositories
             _bienEchangeRepo = new BienEchangeRepository(connectionString);
             _membreRepo = new MembreRepository(connectionString);
             _paysRepo = new PaysRepository(connectionString);
+            _ficheRepo = new FicheRepository(connectionString);
+
         }
 
         #region HOMEPAGE
@@ -84,24 +88,32 @@ namespace HomeShare.Repositories
                     (biens =>
                     new BienAEchangerModel()
                     {
+                        IdBien = biens.IdBien,
                         Photo = "/images/properties/" + biens.Photo,
                         Titre = biens.Titre,
                         NombrePersonne = biens.NombrePerson,
                         DescCourte = biens.DescCourte,
                         Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).GetOne(biens.Pays).Drapeau,
                         NomPays = ((PaysRepository)_paysRepo).obtenirNomPaysDepuisId(biens.Pays).Libelle,
-                        Fiche = new FicheModel() 
-                            { //todo si tps: checker si on peut éviter la répétition et récupérer les infos déjà dans le bienAEchangerModel
-                            Photo = "/images/properties/" + biens.Photo,
-                            Titre = biens.Titre,
-                            DescLongue = biens.DescLongue,
-                            Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).GetOne(biens.Pays).Drapeau,
-                            }
                     }
                     ).ToList();
         }
         #endregion
 
+        public FicheModel genererFiche(int id)
+        {
+            return new FicheModel() {
+            IdBien = id,
+            Titre = _ficheRepo.GetOne(id).Titre,
+            NombrePersonnes = _ficheRepo.GetOne(id).NombrePerson, 
+            DescLongue = _ficheRepo.GetOne(id).DescLong,
+            Photo = "/images/properties/" + _ficheRepo.GetOne(id).Photo,
+            //ajouter le drapeau !
+            Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).obtenirDrapeauDepuisIdBien(id).Drapeau
+            };
+
+
+        }
 
         #region INSCRIPTION ET CONNEXION
         //inscription
