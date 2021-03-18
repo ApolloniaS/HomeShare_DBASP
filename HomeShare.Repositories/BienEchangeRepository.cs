@@ -39,7 +39,8 @@ namespace HomeShare.Repositories
 
         public List<BienEchangeEntity> Get()
         {
-            throw new NotImplementedException();
+            string requete = "SELECT * FROM BienEchange";
+            return base.Get(requete);
         }
 
         public BienEchangeEntity GetOne(int PK)

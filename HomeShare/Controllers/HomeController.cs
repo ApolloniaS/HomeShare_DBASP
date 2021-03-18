@@ -15,11 +15,11 @@ namespace HomeShare.Controllers
             return View(hvm);
         }
 
-        public ActionResult About()
+        public ActionResult Biens()
         {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
+            BiensViewModel bvm = new BiensViewModel();
+            return View(bvm);
         }
 
         public ActionResult Contact()

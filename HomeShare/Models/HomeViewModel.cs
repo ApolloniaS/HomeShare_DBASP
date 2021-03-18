@@ -12,9 +12,13 @@ namespace HomeShare.Models
         UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
         private List<BienAEchangerModel> _derniersEchanges;
         private List<BienAEchangerModel> _meilleursEchanges;
+        private List<BienAEchangerModel> _frontSlider;
+
 
         public HomeViewModel()
         {
+            // affichage dans le gros slider
+            FrontSlider = uow.displayFrontslider();
             // affiche les derniers biens dans le slider en bas à droite de HOMEPAGE
             DerniersEchanges = uow.displayCinqDerniersBien();
             // afficher les meilleurs bien dans le slider du milieu
@@ -24,6 +28,6 @@ namespace HomeShare.Models
 
         public List<BienAEchangerModel> DerniersEchanges { get => _derniersEchanges; set => _derniersEchanges = value; }
         public List<BienAEchangerModel> MeilleursEchanges { get => _meilleursEchanges; set => _meilleursEchanges = value; }
-
+        public List<BienAEchangerModel> FrontSlider { get => _frontSlider; set => _frontSlider = value; }
     }
 }

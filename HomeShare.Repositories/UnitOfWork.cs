@@ -12,21 +12,24 @@ namespace HomeShare.Repositories
     public class UnitOfWork
     {
         IConcreteRepository<BienEchangeEntity> _bienEchangeRepo;
+        IConcreteRepository<MembreEntity> _membreRepo;
 
         public UnitOfWork(string connectionString)
         {
             _bienEchangeRepo = new BienEchangeRepository(connectionString);
+            _membreRepo = new MembreRepository(connectionString);
         }
 
         #region HOMEPAGE
 
         // slider qui affiche les meilleurs biens
-        public List<BienAEchangerModel> displayMeilleursBiens() {
+        public List<BienAEchangerModel> displayMeilleursBiens()
+        {
             return ((BienEchangeRepository)_bienEchangeRepo).obtenirLesMieuxNotes().Select
                 (biens =>
                 new BienAEchangerModel()
                 {
-                    Photo = biens.Photo,
+                    Photo = "/images/properties/" + biens.Photo,
                     IsEnabled = biens.IsEnabled,
                     Titre = biens.Titre,
                     AssuranceObligatoire = biens.AssuranceObligatoire,
@@ -42,14 +45,54 @@ namespace HomeShare.Repositories
                 (biens =>
                 new BienAEchangerModel()
                 {
-                    Photo = biens.Photo,
+                    Photo = "/images/properties/" + biens.Photo,
                     Titre = biens.Titre,
                 }
                 )
                 .ToList();
         }
 
+        // slider tout en haut; c'est un random sur les meilleurs biens
+        public List<BienAEchangerModel> displayFrontslider()
+        {
+            return ((BienEchangeRepository)_bienEchangeRepo).obtenirCinqRandoms().Select
+                (biens =>
+                new BienAEchangerModel()
+                {
+                    Titre = biens.Titre,
+                    CodePostal = biens.CodePostal,
+                    Ville = biens.Ville,
+                    Pays = biens.Pays,
+                    DescCourte = biens.DescCourte,
+                    Photo = "/images/properties/" + biens.Photo,
+                }
+                )
+                .ToList();
+        }
+
         #endregion
+
+        #region PAGE RECHERCHE
+        // reprend tous les biens, tout critères confondus
+        public List<BienAEchangerModel> obtenirTousLesBiens()
+        {
+
+            return ((BienEchangeRepository)_bienEchangeRepo).Get().Select
+                    (biens =>
+                    new BienAEchangerModel()
+                    {
+                        Photo = "/images/properties/" + biens.Photo,
+                        IsEnabled = biens.IsEnabled,
+                        Titre = biens.Titre,
+                        AssuranceObligatoire = biens.AssuranceObligatoire,
+                        //options model ??
+                    }
+                    ).ToList();
+        }
+    #endregion
+
+
     }
 
 }
+

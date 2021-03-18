@@ -1,0 +1,10 @@
+18-03-21 13:45:36	Ce journal contient des informations sur l'importation du script 'script-update-db.sql' dans le projet 'HomeShare.DB' sur l'ordinateur 'LAPTOP-8VA9Q1AS' par l'utilisateur 'sorel.
+18-03-21 13:45:36	Début de l'importation du fichier : C:\Users\sorel\Desktop\script-update-db.sql 
+18-03-21 13:45:36	Nom de fichier C:\Users\sorel\Desktop\script-update-db.sql (taille : 2803)
+18-03-21 13:45:36	Analyse du script d'importation
+18-03-21 13:45:36	Nombre total de lots dans le script : 1
+18-03-21 13:45:36	Nombre total d'instructions dans le script : 0
+18-03-21 13:45:36	Le script a été correctement importé dans le projet.
+18-03-21 13:45:36	Dans le script que vous avez fourni à l'opération d'importation, une ou plusieurs instructions n'ont pas été totalement comprises. Elles ont été déplacées vers le fichier ScriptsIgnoredOnImport.sql. Pour plus d'informations, examinez le contenu du fichier.
+18-03-21 13:45:36	Un résumé de l'opération d'importation a été enregistré à l'emplacement suivant : C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\Importer les journaux de scripts\script-update-db_sql_20210318124536.log.
+18-03-21 13:45:36	Cliquez sur Terminer pour continuer...
