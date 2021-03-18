@@ -1,0 +1,23 @@
+﻿@model HomeShare.Models.BiensViewModel
+@{
+    ViewBag.Title = "Fiche";
+}
+
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="/Home/Index">Home</a> / Bien sélectionné</span>
+    </div>
+</div>
+
+Coucou je suis une fiche
+test:
+@foreach (HomeShare.Models.BienAEchangerModel item in Model.TousLesBiens)
+{ @item.Fiche.Photo<br/>
+    @item.Fiche.Titre<br />
+    @item.Fiche.NombrePersonnes<br />
+    @item.Fiche.DescLongue<br />
+    @item.Fiche.Drapeau<br />
+
+}
+
+

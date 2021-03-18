@@ -22,11 +22,10 @@ namespace HomeShare.Controllers
             return View(bvm);
         }
 
-        public ActionResult Contact()
+        public ActionResult Fiche()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            BiensViewModel bvm = new BiensViewModel();
+            return View(bvm);
         }
     }
 }

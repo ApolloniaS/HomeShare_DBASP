@@ -14,7 +14,7 @@
                         <img class="bg-img" src="@item.Photo">
                         <h2><a href="#">@item.Titre</a></h2>
                         <blockquote>
-                            <p class="location"><span class="glyphicon glyphicon-map-marker"></span> @item.CodePostal @item.Ville, @item.Pays</p>
+                            <p class="location"><span class="glyphicon glyphicon-map-marker"></span> @item.CodePostal @item.Ville, @item.NomPays</p>
                             <p>@item.DescCourte</p>
                             <cite>ÉCHANGEZ-MOI</cite>
                         </blockquote>
@@ -23,9 +23,6 @@
             }
             
         </div><!-- /sl-slider -->
-
-
-
         <nav id="nav-dots" class="nav-dots">
             <span class="nav-dot-current"></span>
             <span></span>
@@ -42,20 +39,24 @@
 <div class="banner-search">
     <div class="container">
         <!-- banner -->
-        <h3>Buy, Sale & Rent</h3>
+        <h3>Rechercher...</h3>
         <div class="searchbar">
             <div class="row">
                 <div class="col-lg-6 col-sm-6">
-                    <input type="text" class="form-control" placeholder="Search of Properties">
+                    <input type="text" class="form-control" placeholder="Critère de recherche">
                     <div class="row">
                         <div class="col-lg-3 col-sm-3 ">
-                            <select class="form-control">
-                                <option>Buy</option>
-                                <option>Rent</option>
-                                <option>Sale</option>
+                            <select name ="sortBy" class="form-control">
+                                <option value="pays">Pays</option>
+                                <option value="capacite">Nombre de personnes</option>
+                                <option value="jardin">Jardin</option>
+                                <option value="piscine">Piscine</option>
+                                <option value="lavage">Machine à laver</option>
+                                <option value="internet">Internet</option>
+                                <option value="animaux">Animaux admis</option>
                             </select>
                         </div>
-                        <div class="col-lg-3 col-sm-4">
+                        @*<div class="col-lg-3 col-sm-4">
                             <select class="form-control">
                                 <option>Price</option>
                                 <option>$150,000 - $200,000</option>
@@ -71,17 +72,17 @@
                                 <option>Building</option>
                                 <option>Office Space</option>
                             </select>
-                        </div>
+                        </div>*@
                         <div class="col-lg-3 col-sm-4">
-                            <button class="btn btn-success" onclick="window.location.href='buysalerent.php'">Find Now</button>
+                            <button class="btn btn-success" onclick="window.location.href='/Home/Biens'">Rechercher</button>
                         </div>
                     </div>
 
 
                 </div>
                 <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-                    <p>Join now and get updated with all the properties deals.</p>
-                    <button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Login</button>
+                    <p>Connectez-vous pour procéder à l'échange de bien !</p>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Se connecter</button>
                 </div>
             </div>
         </div>

@@ -13,12 +13,14 @@ namespace HomeShare.Repositories
     {
         IConcreteRepository<BienEchangeEntity> _bienEchangeRepo;
         IConcreteRepository<MembreEntity> _membreRepo;
+        IConcreteRepository<PaysEntity> _paysRepo;
 
 
         public UnitOfWork(string connectionString)
         {
             _bienEchangeRepo = new BienEchangeRepository(connectionString);
             _membreRepo = new MembreRepository(connectionString);
+            _paysRepo = new PaysRepository(connectionString);
         }
 
         #region HOMEPAGE
@@ -63,9 +65,9 @@ namespace HomeShare.Repositories
                     Titre = biens.Titre,
                     CodePostal = biens.CodePostal,
                     Ville = biens.Ville,
-                    Pays = biens.Pays,
                     DescCourte = biens.DescCourte,
                     Photo = "/images/properties/" + biens.Photo,
+                    NomPays = ((PaysRepository)_paysRepo).obtenirNomPaysDepuisId(biens.Pays).Libelle
                 }
                 )
                 .ToList();
@@ -74,7 +76,7 @@ namespace HomeShare.Repositories
         #endregion
 
         #region PAGE RECHERCHE
-        // reprend tous les biens, tout critères confondus
+        // reprend tous les biens, tout critères confondus, pour la page de recherche
         public List<BienAEchangerModel> obtenirTousLesBiens()
         {
 
@@ -83,14 +85,23 @@ namespace HomeShare.Repositories
                     new BienAEchangerModel()
                     {
                         Photo = "/images/properties/" + biens.Photo,
-                        IsEnabled = biens.IsEnabled,
                         Titre = biens.Titre,
-                        AssuranceObligatoire = biens.AssuranceObligatoire,
-                        //options model ??
+                        NombrePersonne = biens.NombrePerson,
+                        DescCourte = biens.DescCourte,
+                        Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).GetOne(biens.Pays).Drapeau,
+                        NomPays = ((PaysRepository)_paysRepo).obtenirNomPaysDepuisId(biens.Pays).Libelle,
+                        Fiche = new FicheModel() 
+                            { //todo si tps: checker si on peut éviter la répétition et récupérer les infos déjà dans le bienAEchangerModel
+                            Photo = "/images/properties/" + biens.Photo,
+                            Titre = biens.Titre,
+                            DescLongue = biens.DescLongue,
+                            Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).GetOne(biens.Pays).Drapeau,
+                            }
                     }
                     ).ToList();
         }
         #endregion
+
 
         #region INSCRIPTION ET CONNEXION
         //inscription

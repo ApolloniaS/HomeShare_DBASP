@@ -32,7 +32,7 @@
                 <!-- Nav Starts -->
                 <div class="navbar-collapse  collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.php">Home</a></li>
+                        <li class="active"><a href="/Home/Index">Home</a></li>
                         <li><a href="about.php">A PROPOS DE NOUS</a></li>
                         <li><a href="agents.php">LES PROPRIÉTAIRES</a></li>
                         <li><a href="blog.php">LES BIENS EN ÉCHANGE</a></li>
@@ -50,14 +50,13 @@
 
         <!-- Header Starts -->
         <div class="header">
-            <a href="index.php"><img src="/images/logo.png" alt="Realestate"></a>
+            <a href="/Home/Index"><img src="/images/logo.png" alt="Realestate"></a>
 
             <ul class="pull-right">
                 <li><a href="/Home/Biens">ÉCHANGER</a></li>
                 @if (HomeShare.Infra.SessionUtils.IsLogged)
                 {
                     <li><a href="/Account/Logout">SE DÉCONNECTER</a></li>
-                    // /Account/logout
                 }
                 else
                 {
@@ -107,7 +106,7 @@
                     <h4>Contact us</h4>
                     <p>
                         <b>IF3 Inc. Apollonia Sorella</b><br>
-                        <span class="glyphicon glyphicon-map-marker"></span> Rue Toto, Belgique <br>
+                        <span class="glyphicon glyphicon-map-marker"></span> Rue Toto 42, Belgique <br>
                         <span class="glyphicon glyphicon-envelope"></span> hello@world.com<br>
                         <span class="glyphicon glyphicon-earphone"></span> (123) 456-7890
                     </p>

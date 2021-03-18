@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Infra\SessionUtils.cs" />
     <Compile Include="Models\BiensViewModel.cs" />
+    <Compile Include="Models\FicheViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\MembreProfilModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,6 +163,17 @@
     <Content Include="images\blog\3.jpg" />
     <Content Include="images\blog\4.jpg" />
     <Content Include="images\blog\5.jpg" />
+    <Content Include="images\drapeaux\au.jpg" />
+    <Content Include="images\drapeaux\be.jpg" />
+    <Content Include="images\drapeaux\ei.jpg" />
+    <Content Include="images\drapeaux\es.jpg" />
+    <Content Include="images\drapeaux\fr.jpg" />
+    <Content Include="images\drapeaux\it.jpg" />
+    <Content Include="images\drapeaux\lu.jpg" />
+    <Content Include="images\drapeaux\pb.jpg" />
+    <Content Include="images\drapeaux\pt.jpg" />
+    <Content Include="images\drapeaux\ru.jpg" />
+    <Content Include="images\drapeaux\us.jpg" />
     <Content Include="images\facebook.png" />
     <Content Include="images\instagram.png" />
     <Content Include="images\linkedin.png" />
@@ -218,6 +230,7 @@
     <Content Include="Views\Shared\_cartesBiens.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Fiche.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,13 +8,13 @@ namespace HomeShare.Entities
 {
     public class BienEchangeEntity
     {
-        private int _idBien, _nombrePersonnes, _pays, _idMembre;
+        private int _idBien, _nombrePerson, _pays, _idMembre;
         private string _titre, descCourte, descLongue, _ville, _rue, _numero, _codePostal, _photo, _latitude, _longitude;
         private bool _assuranceObligatoire, _isEnabled;
         private DateTime _disabledDate, _dateCreation;
 
         public int IdBien { get => _idBien; set => _idBien = value; }
-        public int NombrePersonnes { get => _nombrePersonnes; set => _nombrePersonnes = value; }
+        public int NombrePerson { get => _nombrePerson; set => _nombrePerson = value; }
         public int Pays { get => _pays; set => _pays = value; }
         public int IdMembre { get => _idMembre; set => _idMembre = value; }
         public string Titre { get => _titre; set => _titre = value; }
