@@ -1,6 +1,6 @@
-﻿using HomeShare.Models;
+﻿using HomeShare.Infra;
+using HomeShare.Models;
 using HomeShare.Repositories;
-using Projet_ASP_books.Infra;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,6 +17,14 @@ namespace HomeShare.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+
+            return RedirectToAction("Index", "Home", new { area = "" });
         }
 
         [HttpGet]

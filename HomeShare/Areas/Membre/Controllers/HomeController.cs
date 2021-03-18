@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HomeShare.Infra;
+using HomeShare.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,15 +13,13 @@ namespace HomeShare.Areas.Membre.Controllers
         // GET: Membre/Home
         public ActionResult Index()
         {
-            return View();
+            if (!SessionUtils.IsLogged) return RedirectToAction("Login", "Account", new { area = "" });
+            else
+            {
+                MembreProfilModel mpm = new MembreProfilModel();
+                return View(mpm);
+            }
         }
 
-        [HttpGet]
-        public ActionResult Logout()
-        {
-            Session.Abandon();
-
-            return RedirectToAction("Index", "Home", new { area = "" });
-        }
     }
 }

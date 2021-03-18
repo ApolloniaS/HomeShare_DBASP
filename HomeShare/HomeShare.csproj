@@ -130,6 +130,7 @@
     <Compile Include="Infra\SessionUtils.cs" />
     <Compile Include="Models\BiensViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\MembreProfilModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

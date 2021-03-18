@@ -39,11 +39,11 @@ namespace HomeShare.Repositories
 
         public bool Insert(MembreEntity toInsert)
         {
-            string requete = @"EXEC [dbo].[SP_Ajout_User]
+            string requete = @"EXEC SP_Ajout_User
             @nom,
             @prenom,
             @email,
-            @tel,
+            @telephone,
             @login,
             @password,
             @pays";

@@ -124,6 +124,8 @@ namespace HomeShare.Repositories
                     IdMembre = me.IdMembre,
                     Login = me.Login,
                     Password = me.Password,
+                    Nom = me.Nom,
+                    Prenom = me.Prenom,
                 };
             }
             else
