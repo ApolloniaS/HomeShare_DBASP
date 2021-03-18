@@ -1,30 +1,5 @@
 ﻿@model HomeShare.Models.HomeViewModel
 
-@*@section ChangementsCss
-{
-    <style>
-        .bg-img-1 {
-            background-image: url(../../../images/slider/1.jpg);
-        }
-
-        .bg-img-2 {
-            background-image: url(../../../images/slider/2.jpg);
-        }
-
-        .bg-img-3 {
-            background-image: url(../../../images/slider/3.jpg);
-        }
-
-        .bg-img-4 {
-            background-image: url(../../../images/slider/4.jpg);
-        }
-
-        .bg-img-5 {
-            background-image: url(../../../images/slider/5.jpg);
-        }
-        }
-    </style>
-}*@
 <div class="">
 
 
@@ -36,7 +11,7 @@
             {
                 <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
                     <div class="sl-slide-inner">
-                        <div class="bg-img bg-img-5"></div>
+                        <img class="bg-img" src="@item.Photo">
                         <h2><a href="#">@item.Titre</a></h2>
                         <blockquote>
                             <p class="location"><span class="glyphicon glyphicon-map-marker"></span> @item.CodePostal @item.Ville, @item.Pays</p>
@@ -167,24 +142,42 @@
                     </ol>
                     <!-- Carousel items -->
                     <div class="carousel-inner">
-                        @foreach (HomeShare.Models.BienAEchangerModel item in Model.DerniersEchanges)
+                        @for (int i = 0; i < Model.DerniersEchanges.Count; i++)
 
                         {
-                            <div class="item active">
-                                @*le 1er doit être active et pas les autres !!*@
-                                <div class="row">
-                                    <div class="col-lg-4"><img src="@item.Photo" class="img-responsive" alt="properties" /></div>
-                                    <div class="col-lg-8">
-                                        <h5><a href="property-detail.php">@item.Titre</a></h5>
-                                        <p class="price">@item.AssuranceObligatoire</p>
-                                        <a href="property-detail.php" class="more">LIRE PLUS...</a>
+                            if (i == 1)
+                            {
+                                <div class="item active">
+                                    <div class="row">
+                                        <div class="col-lg-4"><img src="@Model.DerniersEchanges[i].Photo" class="img-responsive" alt="properties" /></div>
+                                        <div class="col-lg-8">
+                                            <h5><a href="property-detail.php">@Model.DerniersEchanges[i].Titre</a></h5>
+                                            <p class="price">@Model.DerniersEchanges[i].AssuranceObligatoire</p>
+                                            <a href="property-detail.php" class="more">LIRE PLUS...</a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                
+                            }
+                            else
+                            { <div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-4"><img src="@Model.DerniersEchanges[i].Photo" class="img-responsive" alt="properties" /></div>
+                                        <div class="col-lg-8">
+                                            <h5><a href="property-detail.php">@Model.DerniersEchanges[i].Titre</a></h5>
+                                            <p class="price">@Model.DerniersEchanges[i].AssuranceObligatoire</p>
+                                            <a href="property-detail.php" class="more">LIRE PLUS...</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
+
+                            @*le 1er doit être active et pas les autres !!*@
+
                         }
 
                     </div>
-                </div>
+                    </div>
             </div>
         </div>
     </div>
