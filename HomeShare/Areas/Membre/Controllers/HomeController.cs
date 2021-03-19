@@ -23,6 +23,16 @@ namespace HomeShare.Areas.Membre.Controllers
                 return View(mpm);
             }
         }
+
+        public ActionResult MesBiens()
+        {
+            if (!SessionUtils.IsLogged) return RedirectToAction("Login", "Account", new { area = "" });
+            else
+            {
+                MembreProfilModel mpm = new MembreProfilModel();
+                return View(mpm);
+            }
+        }
         
         //[HttpPost]
         //[ValidateAntiForgeryToken]

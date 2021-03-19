@@ -33,7 +33,7 @@ namespace HomeShare.Repositories
         // slider qui affiche les meilleurs biens
         public List<BienAEchangerModel> displayMeilleursBiens()
         {
-            return ((BienEchangeRepository)_bienEchangeRepo).obtenirLesMieuxNotes().Select
+            return ((BienEchangeRepository)_bienEchangeRepo).ObtenirLesMieuxNotes().Select
                 (biens =>
                 new BienAEchangerModel()
                 {
@@ -49,7 +49,7 @@ namespace HomeShare.Repositories
         // slider qui affiche les 5 derniers biens ajoutés
         public List<BienAEchangerModel> displayCinqDerniersBien()
         {
-            return ((BienEchangeRepository)_bienEchangeRepo).obtenirCinqDerniers().Select
+            return ((BienEchangeRepository)_bienEchangeRepo).ObtenirCinqDerniers().Select
                 (biens =>
                 new BienAEchangerModel()
                 {
@@ -63,7 +63,7 @@ namespace HomeShare.Repositories
         // slider tout en haut; c'est un random sur les meilleurs biens
         public List<BienAEchangerModel> displayFrontslider()
         {
-            return ((BienEchangeRepository)_bienEchangeRepo).obtenirCinqRandoms().Select
+            return ((BienEchangeRepository)_bienEchangeRepo).ObtenirCinqRandoms().Select
                 (biens =>
                 new BienAEchangerModel()
                 {
@@ -141,6 +141,21 @@ namespace HomeShare.Repositories
         //    };
         //    return _avisMembreRepo.Insert(ae);
         //}
+        #endregion
+
+        #region ZONE MEMBRE
+
+        public List<BienAEchangerModel> AfficherListeBiens(int idMembre)
+        {
+            return ((BienEchangeRepository)_bienEchangeRepo).ObtenirLesBiensDepuisMembre(idMembre).Select(
+                bien =>
+                new BienAEchangerModel
+                {
+                    Titre = bien.Titre,
+                    DescCourte = bien.DescCourte,
+                    DateCreation = bien.DateCreation,
+                }).ToList();
+        }
         #endregion
 
         #region INSCRIPTION ET CONNEXION

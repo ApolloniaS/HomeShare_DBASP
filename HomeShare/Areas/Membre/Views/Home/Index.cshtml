@@ -3,6 +3,28 @@
     ViewBag.Title = "Index";
 }
 
-Ceci est la zone membre.
-Bonjour @Model.UtilisateurCourant.Prenom @Model.UtilisateurCourant.Nom !
+<!-- banner -->
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="/Membre/Home">Zone Membre</a> / Home</span>
+        <h2>Parcourir tous les biens</h2>
+    </div>
+</div>
+<!-- banner -->
+
+<div class="container-zone-membre" style="display:flex;">
+    <div class="menu-zone-membre" style="width:70%;margin-left:35%;">
+        
+            <a href="/Membre/Home/Mesbiens">Mes biens</a><br/>
+            <a href="#">Ajouter un bien</a><br/>
+            <a href="#">Les demandes d'échange</a><br/>
+
+    </div>
+    <div class="side-bar-zone-membre" style="width:30%;">
+        @{
+            Html.RenderPartial("~/Views/Shared/_infoProprio.cshtml");
+        }
+    </div>
+</div>
+
 

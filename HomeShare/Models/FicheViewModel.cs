@@ -13,6 +13,7 @@ namespace HomeShare.Models
         private FicheModel _fiche;
         //private AvisMembreModel _avisMembre;
 
+
         public FicheViewModel(int id)
         {
             Fiche = uow.genererFiche(id);

@@ -11,6 +11,7 @@ namespace HomeShare.Models
         private string _photo, _titre, _codePostal, _ville, _descCourte, _nomPays, _drapeau;
         private bool _assuranceObligatoire, _isEnabled;
         private int _idBien, _pays, _nombrePersonne;
+        private DateTime _dateCreation;
         //pour la fiche dans le bien
         private string _photoFiche, _titreFiche, _nombrePersonneFiche, _descFiche, _drapeauFiche;
 
@@ -33,5 +34,6 @@ namespace HomeShare.Models
         public string NombrePersonneFiche { get => _nombrePersonneFiche; set => _nombrePersonneFiche = value; }
         public string DescFiche { get => _descFiche; set => _descFiche = value; }
         public string DrapeauFiche { get => _drapeauFiche; set => _drapeauFiche = value; }
+        public DateTime DateCreation { get => _dateCreation; set => _dateCreation = value; }
     }
 }

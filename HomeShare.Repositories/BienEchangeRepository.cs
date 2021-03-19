@@ -14,19 +14,26 @@ namespace HomeShare.Repositories
         {
         }
 
-        public List<BienEchangeEntity> obtenirCinqDerniers()
+        public List<BienEchangeEntity> ObtenirLesBiensDepuisMembre(int idMembre)
+        {
+            //IL Y A UNE SP POUR CA !!
+            string requete = "SELECT * FROM BienEchange WHERE idMembre = " + idMembre;
+            return base.Get(requete);
+        }
+
+        public List<BienEchangeEntity> ObtenirCinqDerniers()
         {
             string requete = "SELECT * FROM Vue_CinqDernierBiens";
             return base.Get(requete);
         }
 
-        public List<BienEchangeEntity> obtenirLesMieuxNotes()
+        public List<BienEchangeEntity> ObtenirLesMieuxNotes()
         { 
             string requete = "SELECT * FROM Vue_MeilleursAvis";
             return base.Get(requete);
         }
 
-        public List<BienEchangeEntity> obtenirCinqRandoms()
+        public List<BienEchangeEntity> ObtenirCinqRandoms()
         {
             string requete = "SELECT TOP(5) * FROM Vue_MeilleursAvis ORDER BY NEWID()";
             return base.Get(requete);

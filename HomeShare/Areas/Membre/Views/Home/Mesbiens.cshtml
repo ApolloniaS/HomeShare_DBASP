@@ -1,0 +1,52 @@
+﻿@model HomeShare.Models.MembreProfilModel
+@{
+    ViewBag.Title = "Mesbiens";
+}
+
+<!-- banner -->
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="/Membre/Home">Zone Membre</a> / Mes biens</span>
+        <h2>Parcourir tous les biens</h2>
+    </div>
+</div>
+<!-- banner -->
+
+<div class="container-zone-membre" style="display:flex;">
+    <div class="list-container" style="display:flex;justify-content:space-between;width:70%;">
+        <div>
+            Titre du bien<br />
+            @foreach (HomeShare.Models.BienAEchangerModel item in Model.ListeBiens)
+            {
+                @item.Titre<br />
+            }
+        </div>
+        <div>
+            Description courte<br />
+            @foreach (HomeShare.Models.BienAEchangerModel item in Model.ListeBiens)
+            {
+                @item.DescCourte<br />
+            }
+        </div>
+        <div>
+            Date de création<br />
+            @foreach (HomeShare.Models.BienAEchangerModel item in Model.ListeBiens)
+            {
+                @item.DateCreation<br />
+            }
+        </div>
+        <div>
+            Modifier
+        </div>
+        <div>
+            Supprimer
+        </div>
+
+    </div>
+    <div class="side-bar-zone-membre" style="width:30%;">
+        @{
+            Html.RenderPartial("~/Views/Shared/_infoProprio.cshtml");
+        }
+    </div>
+
+</div>

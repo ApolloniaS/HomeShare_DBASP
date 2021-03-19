@@ -12,9 +12,13 @@ namespace HomeShare.Models
     {
         UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
         private MembreModel _utilisateurCourant = SessionUtils.ConnectedUser;
+        private List<BienAEchangerModel> _listeBiens;
 
-        public MembreProfilModel() { }
+        public MembreProfilModel() {
+            ListeBiens = uow.AfficherListeBiens(UtilisateurCourant.IdMembre);
+        }
 
         public MembreModel UtilisateurCourant { get => _utilisateurCourant; set => _utilisateurCourant = value; }
+        public List<BienAEchangerModel> ListeBiens { get => _listeBiens; set => _listeBiens = value; }
     }
 }
