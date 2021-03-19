@@ -3,6 +3,21 @@
     ViewBag.Title = "Index";
 }
 
+<style>
+    .container-zone-membre {
+        display: flex;
+    }
+
+    .menu-zone-membre {
+        width: 70%;
+        margin-left: 35%;
+    }
+
+    .side-bar-zone-membre {
+        width: 30%;
+    }
+</style>
+
 <!-- banner -->
 <div class="inside-banner">
     <div class="container">
@@ -12,15 +27,15 @@
 </div>
 <!-- banner -->
 
-<div class="container-zone-membre" style="display:flex;">
-    <div class="menu-zone-membre" style="width:70%;margin-left:35%;">
+<div class="container-zone-membre">
+    <div class="menu-zone-membre">
         
             <a href="/Membre/Home/Mesbiens">Mes biens</a><br/>
             <a href="/Membre/Home/AjoutBien">Ajouter un bien</a><br/>
             <a href="#">Les demandes d'échange</a><br/>
 
     </div>
-    <div class="side-bar-zone-membre" style="width:30%;">
+    <div class="side-bar-zone-membre">
         @{
             Html.RenderPartial("~/Views/Shared/_infoProprio.cshtml");
         }

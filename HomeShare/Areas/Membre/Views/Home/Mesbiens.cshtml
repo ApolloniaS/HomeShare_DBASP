@@ -3,6 +3,22 @@
     ViewBag.Title = "Mesbiens";
 }
 
+<style>
+    .container-zone-membre {
+    display: flex;
+    }
+
+    .list-container {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }
+
+    .side-bar-zone-membre {
+        width: 30%;
+    }
+</style>
+
 <!-- banner -->
 <div class="inside-banner">
     <div class="container">
@@ -12,8 +28,8 @@
 </div>
 <!-- banner -->
 
-<div class="container-zone-membre" style="display:flex;">
-    <div class="list-container" style="display:flex;justify-content:space-between;width:70%;">
+<div class="container-zone-membre">
+    <div class="list-container">
         <div>
             Titre du bien<br />
             @foreach (HomeShare.Models.BienAEchangerModel item in Model.ListeBiens)
@@ -54,7 +70,7 @@
         </div>
 
                 </div>
-                <div class="side-bar-zone-membre" style="width:30%;">
+                <div class="side-bar-zone-membre">
                     @{
                         Html.RenderPartial("~/Views/Shared/_infoProprio.cshtml");
                     }
