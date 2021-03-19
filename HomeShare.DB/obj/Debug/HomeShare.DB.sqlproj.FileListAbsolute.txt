@@ -2,9 +2,5 @@ C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\bin\Debug\HomeShare.DB.dacpac
 C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\bin\Debug\HomeShare.DB.dll
 C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\bin\Debug\HomeShare.DB.pdb
 C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\obj\Debug\HomeShare.DB.sqlprojAssemblyReference.cache
-C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\obj\Debug\Model.xml
-C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\obj\Debug\refactor.xml
-C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\obj\Debug\postdeploy.sql
-C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\obj\Debug\predeploy.sql
 C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\obj\Debug\HomeShare.DB.dll
 C:\Users\sorel\source\repos\HomeShare\HomeShare.DB\obj\Debug\HomeShare.DB.pdb

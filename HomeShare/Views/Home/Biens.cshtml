@@ -1,5 +1,32 @@
 ﻿@model HomeShare.Models.BiensViewModel
 
+<style>
+    .container-custo {
+        width: 90%;
+        margin: auto;
+        margin-top: 1%;
+    }
+
+    .bien-custo {
+        display: flex;
+        border: 1px solid black;
+        justify-content: space-between;
+        margin-bottom: 1%;
+        align-items: center;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    .item-bien {
+        width: 15%;
+    }
+
+    .item-img {
+        width: 100%;
+        object-fit: contain;
+    }
+</style>
+
 <!-- banner -->
 <div class="inside-banner">
     <div class="container">
@@ -10,17 +37,17 @@
 <!-- banner -->
 
 
-<div class="container-custo" style="width:90%;margin:auto;margin-top:1%;">
+<div class="container-custo">
     @foreach (HomeShare.Models.BienAEchangerModel item in Model.TousLesBiens)
     {
         if (item.IsEnabled == true)
         {
-        <div class="bien-custo" style="display:flex;border:1px solid black;justify-content:space-between;margin-bottom: 1%;align-items:center;padding-left:1%;padding-right: 1%;">
-            <div style="width:15%;">@item.Titre</div>
-            <div style="width:15%;"><img style="width:100%; object-fit: contain;" src="@item.Photo" /></div>
-            <div style="width:15%;">@item.DescCourte</div>
-            <div style="width:15%;">Pour @item.NombrePersonne personnes</div>
-            <div style="width:15%;">
+        <div class="bien-custo">
+            <div class="item-bien">@item.Titre</div>
+            <div class="item-bien"><img class="item-img" src="@item.Photo" /></div>
+            <div class="item-bien">@item.DescCourte</div>
+            <div class="item-bien">Pour @item.NombrePersonne personnes</div>
+            <div class="item-bien">
                 <div><img src="@item.Drapeau" /></div>
                 <div>@item.NomPays</div>
             </div>

@@ -3,38 +3,103 @@
     ViewBag.Title = "Fiche";
 }
 
+<style>
+    .container-fiche-custo {
+        display: flex
+    }
+
+    .container-gauche-custo {
+        width: 70%;
+        border: 1px black solid;
+    }
+
+    .info-biens {
+        display: flex;
+        background-color: lightgray;
+        justify-content: space-between;
+        padding: 1%;
+    }
+
+    .img-in-fiche {
+        width: 150px;
+        height: 100px;
+    }
+
+    .details-fiche {
+        display: flex;
+        padding: 1%;
+    }
+
+    .cadre {
+        border: 1px solid black;
+        background-color: lightblue;
+    }
+
+    .div-fin {
+        padding: 1%;
+    }
+
+    .avis-biens {
+        margin-top: 1%;
+    }
+
+    .avis-custo {
+        background-color: gray;
+        border: 1px solid black;
+        display: flex;
+    }
+
+    .avatar-custo, .meteo-custo {
+        width: 75px;
+        height: 75px;
+        background-color: black;
+        color: white;
+    }
+
+    .surlignagne {
+        background-color: white;
+    }
+
+    .info-proprio {
+        width: 30%;
+        width: 20%;
+        margin: auto
+    }
+
+</style>
+
 <div class="inside-banner">
     <div class="container">
         <span class="pull-right"><a href="/Home/Index">Home</a> / @Model.Fiche.Titre</span>
     </div>
 </div>
 
-<div class="container-fiche-custo" style="display:flex">
-    <div class="container-gauche-custo" style="width:70%;border:1px black solid;">
-        <div class="info-biens" style="display:flex;background-color:lightgray;justify-content:space-between;padding:1%;">
-            <div><img style="width: 150px;height:100px;" src="@Model.Fiche.Photo"/></div>
-            <div style="display:flex;padding:1%;">
+<div class="container-fiche-custo">
+    <div class="container-gauche-custo">
+        <div class="info-biens">
+            <div><img class="img-in-fiche" src="@Model.Fiche.Photo"/></div>
+            <div class="details-fiche">
                 <div>
                     @Model.Fiche.Titre
                     <br />
                     @Model.Fiche.NombrePersonnes personnes
                     <br />
                     Description&nbsp;:<br/>
-                    <div style="border:1px solid black; background-color:lightblue;">@Model.Fiche.DescLongue</div>
+                    <div class="cadre">@Model.Fiche.DescLongue</div>
                     Options&nbsp;:
                     Insérer options ici
                 </div>
-            <div style="padding: 1%;"><img src="@Model.Fiche.Drapeau" /></div>
+            <div class="div-fin"><img src="@Model.Fiche.Drapeau" /></div>
          </div>
         </div>
-        <div class="avis-biens" style="margin-top:1%;">
+        <div class="avis-biens">
             @foreach (HomeShare.Models.AvisMembreModel item in Model.Fiche.AvisMembre)
-            { <div class="avis-custo" style="background-color:gray;border:1px solid black;display:flex;">
-                <div class="avatar-custo" style="width: 75px;height:75px;background-color:black;color:white;">Place pour avatar<br/>
+            { <div class="avis-custo">
+                <div class="avatar-custo">Place pour avatar<br/>
                 
                 </div>
                 <div class="main-avis">
-                    <span style="background-color:white;">@item.Login</span> a a attribué la note de <span style="background-color:white;">@item.Note/10</span> details a écrit&nbsp:<br />
+                    <span class="surlignagne">@item.Login</span> a a attribué la note de <span class="surlignagne">@item.Note/10</span> details a écrit&nbsp:<br />
                     @item.Message
                 </div>
             </div>
@@ -60,9 +125,9 @@
         </form>
         </div> 
     </div>
-    <div class="info-proprio" style="width: 30%;width:20%; margin:auto">
+    <div class="info-proprio">
         <div>
-            <div class="avatar-custo" style="width: 75px;height:75px;background-color:black;color:white;">
+            <div class="avatar-custo">
                 Place pour avatar<br />
             </div>
             Nom et prénom du propriétaire&nbsp;: @Model.Fiche.NomDuProprio
@@ -71,7 +136,7 @@
         <hr />
         <div><button>Échanger le bien</button></div>
         <hr />
-        <div class="meteo-custo" style="width: 75px;height:75px;background-color:black;color:white;">
+        <div class="meteo-custo">
             Place pour météo à venir<br />
         </div>
     </div>
