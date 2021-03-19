@@ -27,7 +27,19 @@
             <div style="padding: 1%;"><img src="@Model.Fiche.Drapeau" /></div>
          </div>
         </div>
-        <div class="avis-biens" style="margin-top:1%;">Les avis des membres</div>
+        <div class="avis-biens" style="margin-top:1%;">
+            @foreach (HomeShare.Models.AvisMembreModel item in Model.Fiche.AvisMembre)
+            { <div class="avis-custo" style="background-color:gray;border:1px solid black;display:flex;">
+                <div class="avatar-custo" style="width: 75px;height:75px;background-color:black;color:white;">Place pour avatar<br/>
+                
+                </div>
+                <div class="main-avis">
+                    <span style="background-color:white;">@item.Login</span> a a attribué la note de <span style="background-color:white;">@item.Note/10</span> details a écrit&nbsp:<br />
+                    @item.Message
+                </div>
+            </div>
+            }
+        </div>
     </div>
     <div class="info-proprio" style="width: 30%;border:1px black solid;">partie proprio</div>
 </div>

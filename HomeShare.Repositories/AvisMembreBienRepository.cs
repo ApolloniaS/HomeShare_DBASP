@@ -14,10 +14,10 @@ namespace HomeShare.Repositories
         {
         }
 
-        public AvisMembreBienEntity obtenirAvisDepuisIdBien(int idBien)
+        public List<AvisMembreBienEntity> obtenirAvisDepuisIdBien(int idBien)
         {
-            string requete = "SELECT * FROM Vue_AvisMembres WHERE idBien = " + idBien;
-            return base.GetOne(idBien, requete);
+            string requete = "SELECT * FROM Vue_AvisMembres WHERE idBien = "+idBien;
+            return base.Get(requete);
         }
 
         public bool Delete(AvisMembreBienEntity toDelete)

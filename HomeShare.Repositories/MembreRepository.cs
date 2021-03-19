@@ -34,7 +34,8 @@ namespace HomeShare.Repositories
 
         public MembreEntity GetOne(int PK)
         {
-            throw new NotImplementedException();
+            string requete = "SELECT * FROM Membre WHERE idMembre = " + PK;
+            return base.GetOne(PK, requete);
         }
 
         public bool Insert(MembreEntity toInsert)

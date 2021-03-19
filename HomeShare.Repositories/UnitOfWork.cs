@@ -15,6 +15,7 @@ namespace HomeShare.Repositories
         IConcreteRepository<MembreEntity> _membreRepo;
         IConcreteRepository<PaysEntity> _paysRepo;
         IConcreteRepository<FicheEntity> _ficheRepo;
+        IConcreteRepository<AvisMembreBienEntity> _avisMembreRepo;
 
 
 
@@ -24,7 +25,7 @@ namespace HomeShare.Repositories
             _membreRepo = new MembreRepository(connectionString);
             _paysRepo = new PaysRepository(connectionString);
             _ficheRepo = new FicheRepository(connectionString);
-
+            _avisMembreRepo = new AvisMembreBienRepository(connectionString);
         }
 
         #region HOMEPAGE
@@ -100,20 +101,31 @@ namespace HomeShare.Repositories
         }
         #endregion
 
+        #region FICHE
         public FicheModel genererFiche(int id)
         {
-            return new FicheModel() {
-            IdBien = id,
-            Titre = _ficheRepo.GetOne(id).Titre,
-            NombrePersonnes = _ficheRepo.GetOne(id).NombrePerson, 
-            DescLongue = _ficheRepo.GetOne(id).DescLong,
-            Photo = "/images/properties/" + _ficheRepo.GetOne(id).Photo,
-            //ajouter le drapeau !
-            Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).obtenirDrapeauDepuisIdBien(id).Drapeau
+            return new FicheModel()
+            {
+                //les infos de description
+                IdBien = id,
+                Titre = _ficheRepo.GetOne(id).Titre,
+                NombrePersonnes = _ficheRepo.GetOne(id).NombrePerson,
+                DescLongue = _ficheRepo.GetOne(id).DescLong,
+                Photo = "/images/properties/" + _ficheRepo.GetOne(id).Photo,
+                Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).obtenirDrapeauDepuisIdBien(id).Drapeau,
+                //todo: récupérer les options
+                // les infos des avis
+                AvisMembre = (List<AvisMembreModel>)((AvisMembreBienRepository)_avisMembreRepo).obtenirAvisDepuisIdBien(id).Select
+                    (avis => new AvisMembreModel {
+                        Message = avis.Message,
+                        Note = avis.Note,
+                        Login = _membreRepo.GetOne(avis.IdMembre).Login
+                    }
+                    ).ToList()
             };
 
-
-        }
+        } 
+        #endregion
 
         #region INSCRIPTION ET CONNEXION
         //inscription

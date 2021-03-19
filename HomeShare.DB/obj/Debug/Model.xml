@@ -1803,8 +1803,8 @@ END]]></Value>
 			<Property Name="QueryScript">
 				<Value><![CDATA[ 
 	SELECT        dbo.AvisMembreBien.note, dbo.AvisMembreBien.message, dbo.AvisMembreBien.idMembre, dbo.AvisMembreBien.DateAvis, dbo.BienEchange.idBien, dbo.Membre.Login, dbo.AvisMembreBien.idAvis
-FROM            dbo.AvisMembreBien INNER JOIN
-                         dbo.BienEchange ON dbo.AvisMembreBien.idBien = dbo.BienEchange.idBien INNER JOIN
+FROM            dbo.AvisMembreBien LEFT JOIN
+                         dbo.BienEchange ON dbo.AvisMembreBien.idBien = dbo.BienEchange.idBien LEFT JOIN
                          dbo.Membre ON dbo.AvisMembreBien.idMembre = dbo.Membre.idMembre AND dbo.BienEchange.idMembre = dbo.Membre.idMembre]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1923,7 +1923,7 @@ FROM            dbo.AvisMembreBien INNER JOIN
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="531" />
+				<Property Name="Length" Value="529" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[Vue_AvisMembres]&#xD;&#xA;&#x9;AS" />
