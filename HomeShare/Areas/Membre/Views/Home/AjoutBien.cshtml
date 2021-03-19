@@ -12,75 +12,109 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
-            Nombre de personnes: <input type="number" name="NombrePersonne" placeholder="Nombre de personnes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre de personnes'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.NombrePersonne, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group">
-            Pays: <input type="number" name="Pays" placeholder="Pays" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Pays'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.Pays, "", new { @class = "text-danger" })
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.UtilisateurCourant.IdMembre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Nombre de personnes:</label> 
             <div class="col-md-10">
-                @Html.EditorFor(model => model.UtilisateurCourant.IdMembre, new { htmlAttributes = new { @class = "form-control", disabled = "true" } })
-                @Html.ValidationMessageFor(model => model.UtilisateurCourant.IdMembre, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            Titre: <input type="text" name="Titre" placeholder="Titre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Titre'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.Titre, "", new { @class = "text-danger" })
-        </div>
-
-        <div class="form-group">
-            Description courte: <input type="text" name="DescCourte" placeholder="Description courte" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description Courte'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.DescCourte, "", new { @class = "text-danger" })
-        </div>
-
-        <div class="form-group">
-            Description longue: <input type="text" name="DescLongue" placeholder="Description longue" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description longue'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.DescLongue, "", new { @class = "text-danger" })
-        </div>
-
-        <div class="form-group">
-            Ville: <input type="text" name="Ville" placeholder="Ville" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ville'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.Ville, "", new { @class = "text-danger" })
-        </div>
-
-        <div class="form-group">
-            Rue: <input type="text" name="Rue" placeholder="Rue" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Rue'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.Rue, "", new { @class = "text-danger" })
-        </div>
-
-        <div class="form-group">
-            Numero: <input type="text" name="Numero" placeholder="Numero" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Numero'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.Numero, "", new { @class = "text-danger" })
-        </div>
-
-        <div class="form-group">
-            CP: <input type="text" name="CodePostal" placeholder="CodePostal" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Code Postal'" required class="form-control">
-            @Html.ValidationMessageFor(model => model.NouveauBien.CodePostal, "", new { @class = "text-danger" })
-        </div>
-        @*photo en valeur par défaut car pas upload
-                <div class="form-group">
-                @Html.LabelFor(model => model.NouveauBien.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.NouveauBien.Photo, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.NouveauBien.Photo, "", new { @class = "text-danger" })
+                <input type="number" name="NombrePersonne" placeholder="Nombre de personnes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre de personnes'" required class="form-control">
                 </div>
-            </div>*@
+                @Html.ValidationMessageFor(model => model.NouveauBien.NombrePersonne, "", new { @class = "text-danger" })
+            </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Pays:</label>
+            <div class="col-md-10">
+                <input type="number" name="Pays" placeholder="Pays" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Pays'" required class="form-control">
+            </div>
+                @Html.ValidationMessageFor(model => model.NouveauBien.Pays, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UtilisateurCourant.IdMembre, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UtilisateurCourant.IdMembre, new { htmlAttributes = new { @class = "form-control", disabled = "true" } })
+                    @Html.ValidationMessageFor(model => model.UtilisateurCourant.IdMembre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Titre:</label>
+                <div class="col-md-10">
+                    <input type="text" name="Titre" placeholder="Titre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Titre'" required class="form-control">
+                </div>
+                    @Html.ValidationMessageFor(model => model.NouveauBien.Titre, "", new { @class = "text-danger" })
+                </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Description courte:</label>
+                <div class="col-md-10">
+                    <input type="text" name="DescCourte" placeholder="Description courte" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description Courte'" required class="form-control">
+                    </div>
+                    @Html.ValidationMessageFor(model => model.NouveauBien.DescCourte, "", new { @class = "text-danger" })
+                </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Description longue:</label>
+                <div class="col-md-10">
+                    <input type="text" name="DescLongue" placeholder="Description longue" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description longue'" required class="form-control">
+                </div>
+                    @Html.ValidationMessageFor(model => model.NouveauBien.DescLongue, "", new { @class = "text-danger" })
+                </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Ville:</label>
+                <div class="col-md-10">
+                    <input type="text" name="Ville" placeholder="Ville" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ville'" required class="form-control">
+                    </div>
+                    @Html.ValidationMessageFor(model => model.NouveauBien.Ville, "", new { @class = "text-danger" })
+                </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Rue:</label>
+                <div class="col-md-10">
+                    <input type="text" name="Rue" placeholder="Rue" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Rue'" required class="form-control">
+                    </div>
+                    @Html.ValidationMessageFor(model => model.NouveauBien.Rue, "", new { @class = "text-danger" })
+                </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Numero:</label>
+                <div class="col-md-10">
+                    <input type="text" name="Numero" placeholder="Numero" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Numero'" required class="form-control">
+                    </div>
+                    @Html.ValidationMessageFor(model => model.NouveauBien.Numero, "", new { @class = "text-danger" })
+                </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Code postal:</label>
+                <div class="col-md-10">
+                    <input type="text" name="CodePostal" placeholder="CodePostal" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Code Postal'" required class="form-control">
+                    </div>
+                    @Html.ValidationMessageFor(model => model.NouveauBien.CodePostal, "", new { @class = "text-danger" })
+                </div>
+                @*photo en valeur par défaut car pas upload
+            <div class="form-group">
+            @Html.LabelFor(model => model.NouveauBien.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NouveauBien.Photo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NouveauBien.Photo, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
 
 
     <div class="form-group">
-        Latitude: <input type="text" name="Latitude" placeholder="Latitude" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Latitude'" required class="form-control">
-        @Html.ValidationMessageFor(model => model.NouveauBien.Latitude, "", new { @class = "text-danger" })
-    </div>
+        <label class="control-label col-md-2">Latitude:</label>
+        <div class="col-md-10">
+            <input type="text" name="Latitude" placeholder="Latitude" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Latitude'" required class="form-control">
+            </div>
+            @Html.ValidationMessageFor(model => model.NouveauBien.Latitude, "", new { @class = "text-danger" })
+        </div>
 
     <div class="form-group">
-        Longitude: <input type="text" name="Longitude" placeholder="Longitude" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Longitude'" required class="form-control">
-        @Html.ValidationMessageFor(model => model.NouveauBien.Longitude, "", new { @class = "text-danger" })
-    </div>
+        <label class="control-label col-md-2">Longitude:</label>
+        <div class="col-md-10">
+            <input type="text" name="Longitude" placeholder="Longitude" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Longitude'" required class="form-control">
+            </div>
+            @Html.ValidationMessageFor(model => model.NouveauBien.Longitude, "", new { @class = "text-danger" })
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.NouveauBien.AssuranceObligatoire, htmlAttributes: new { @class = "control-label col-md-2" })

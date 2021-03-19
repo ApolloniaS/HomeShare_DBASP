@@ -181,7 +181,7 @@ namespace HomeShare.Repositories
         }
 
         public bool AjouterBien(BienAEchangerModel bm, int idmembre)
-        { //todo: les valeurs récupérées sont nulles !
+        { //todo: l'assurance est toujours en false alors qu'elle devrait dépendre de la checkbox
             BienEchangeEntity be = new BienEchangeEntity()
             {
                 Titre = bm.Titre,
