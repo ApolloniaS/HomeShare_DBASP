@@ -16,7 +16,7 @@ namespace HomeShare.Models
 
         public FicheViewModel(int id)
         {
-            Fiche = uow.genererFiche(id);
+            Fiche = uow.GenererFiche(id);
         }
 
         public FicheModel Fiche { get => _fiche; set => _fiche = value; }

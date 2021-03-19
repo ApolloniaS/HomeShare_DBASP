@@ -31,7 +31,7 @@ namespace HomeShare.Repositories
         #region HOMEPAGE
 
         // slider qui affiche les meilleurs biens
-        public List<BienAEchangerModel> displayMeilleursBiens()
+        public List<BienAEchangerModel> DisplayMeilleursBiens()
         {
             return ((BienEchangeRepository)_bienEchangeRepo).ObtenirLesMieuxNotes().Select
                 (biens =>
@@ -47,7 +47,7 @@ namespace HomeShare.Repositories
         }
 
         // slider qui affiche les 5 derniers biens ajoutés
-        public List<BienAEchangerModel> displayCinqDerniersBien()
+        public List<BienAEchangerModel> DisplayCinqDerniersBien()
         {
             return ((BienEchangeRepository)_bienEchangeRepo).ObtenirCinqDerniers().Select
                 (biens =>
@@ -61,7 +61,7 @@ namespace HomeShare.Repositories
         }
 
         // slider tout en haut; c'est un random sur les meilleurs biens
-        public List<BienAEchangerModel> displayFrontslider()
+        public List<BienAEchangerModel> DisplayFrontslider()
         {
             return ((BienEchangeRepository)_bienEchangeRepo).ObtenirCinqRandoms().Select
                 (biens =>
@@ -72,7 +72,7 @@ namespace HomeShare.Repositories
                     Ville = biens.Ville,
                     DescCourte = biens.DescCourte,
                     Photo = "/images/properties/" + biens.Photo,
-                    NomPays = ((PaysRepository)_paysRepo).obtenirNomPaysDepuisId(biens.Pays).Libelle
+                    NomPays = ((PaysRepository)_paysRepo).ObtenirNomPaysDepuisId(biens.Pays).Libelle
                 }
                 )
                 .ToList();
@@ -80,12 +80,12 @@ namespace HomeShare.Repositories
 
         #endregion
 
-        #region PAGE RECHERCHE
-        // reprend tous les biens, tout critères confondus, pour la page de recherche
-        public List<BienAEchangerModel> obtenirTousLesBiens()
+        #region RECHERCHE
+        // reprend tous les biens, tout critères confondus, pour la page de recherche depuis le "voir tous les biens" de la homepage
+        public List<BienAEchangerModel> ObtenirTousLesBiens()
         {
 
-            return ((BienEchangeRepository)_bienEchangeRepo).Get().Select
+            return _bienEchangeRepo.Get().Select
                     (biens =>
                     new BienAEchangerModel()
                     {
@@ -95,14 +95,35 @@ namespace HomeShare.Repositories
                         NombrePersonne = biens.NombrePerson,
                         DescCourte = biens.DescCourte,
                         Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).GetOne(biens.Pays).Drapeau,
-                        NomPays = ((PaysRepository)_paysRepo).obtenirNomPaysDepuisId(biens.Pays).Libelle,
+                        NomPays = ((PaysRepository)_paysRepo).ObtenirNomPaysDepuisId(biens.Pays).Libelle,
+                    }
+                    ).ToList();
+        }
+
+        // recherche depuis la homepage selon critères
+        // pour le moment, elle reprend une recherche avec mot clé dans la description
+        // + possibilité de trier sur le nombre de personnes
+        // todo: trouver d'où vient le bug... 
+        public List<BienAEchangerModel> ObtenirBienSelonCriteres(string sortBy, string userInput, int page)
+        {
+            return ((BienEchangeRepository)_bienEchangeRepo).SeparatePages(sortBy, userInput, page).Select
+                (biens =>
+                    new BienAEchangerModel()
+                    {
+                        IdBien = biens.IdBien,
+                        Photo = "/images/properties/" + biens.Photo,
+                        Titre = biens.Titre,
+                        NombrePersonne = biens.NombrePerson,
+                        DescCourte = biens.DescCourte,
+                        Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).GetOne(biens.Pays).Drapeau,
+                        NomPays = ((PaysRepository)_paysRepo).ObtenirNomPaysDepuisId(biens.Pays).Libelle,
                     }
                     ).ToList();
         }
         #endregion
 
         #region FICHE
-        public FicheModel genererFiche(int id)
+        public FicheModel GenererFiche(int id)
         {
             return new FicheModel()
             {
@@ -112,10 +133,10 @@ namespace HomeShare.Repositories
                 NombrePersonnes = _ficheRepo.GetOne(id).NombrePerson,
                 DescLongue = _ficheRepo.GetOne(id).DescLong,
                 Photo = "/images/properties/" + _ficheRepo.GetOne(id).Photo,
-                Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).obtenirDrapeauDepuisIdBien(id).Drapeau,
+                Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).ObtenirDrapeauDepuisIdBien(id).Drapeau,
                 //todo: récupérer les options
                 // les infos des avis
-                AvisMembre = (List<AvisMembreModel>)((AvisMembreBienRepository)_avisMembreRepo).obtenirAvisDepuisIdBien(id).Select
+                AvisMembre = (List<AvisMembreModel>)((AvisMembreBienRepository)_avisMembreRepo).ObtenirAvisDepuisIdBien(id).Select
                     (avis => new AvisMembreModel {
                         Message = avis.Message,
                         Note = avis.Note,

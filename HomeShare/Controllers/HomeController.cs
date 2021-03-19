@@ -19,10 +19,13 @@ namespace HomeShare.Controllers
             return View(hvm);
         }
 
-        public ActionResult Biens()
+        public ActionResult Biens(string sortBy = "", string userInput = null, int page = 1)
         {
 
+            ViewBag.sortByNbPersonnes = sortBy == "capacite" ? "nombrePerson_desc" : "";
+
             BiensViewModel bvm = new BiensViewModel();
+            bvm.paginationBiens(sortBy, userInput, page);
             return View(bvm);
         }
 
@@ -31,6 +34,7 @@ namespace HomeShare.Controllers
          //todo: gérer si un user tape /Home/Fiche sans id!
         {
             FicheViewModel bvm = new FicheViewModel(idBien);
+
             return View(bvm);
         }
     }

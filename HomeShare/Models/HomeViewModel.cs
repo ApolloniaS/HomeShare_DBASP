@@ -18,11 +18,11 @@ namespace HomeShare.Models
         public HomeViewModel()
         {
             // affichage dans le gros slider
-            FrontSlider = uow.displayFrontslider();
+            FrontSlider = uow.DisplayFrontslider();
             // affiche les derniers biens dans le slider en bas à droite de HOMEPAGE
-            DerniersEchanges = uow.displayCinqDerniersBien();
+            DerniersEchanges = uow.DisplayCinqDerniersBien();
             // afficher les meilleurs bien dans le slider du milieu
-            MeilleursEchanges = uow.displayMeilleursBiens();
+            MeilleursEchanges = uow.DisplayMeilleursBiens();
 
         }
 

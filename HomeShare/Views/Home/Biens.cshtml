@@ -1,6 +1,6 @@
 ﻿@model HomeShare.Models.BiensViewModel
-    
-    <!-- banner -->
+
+<!-- banner -->
 <div class="inside-banner">
     <div class="container">
         <span class="pull-right"><a href="/Home/Index">Home</a> / Parcourir tous les biens</span>
@@ -26,3 +26,6 @@
         </div>
     }
 </div>
+@{
+    Html.RenderPartial("~/Views/Shared/_paginate.cshtml", new ViewDataDictionary { { "MaxPage", Model.MaxPage } });
+}

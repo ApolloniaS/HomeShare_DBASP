@@ -14,6 +14,35 @@ namespace HomeShare.Repositories
         {
         }
 
+        public List<BienEchangeEntity> SeparatePages(string sortBy, string userInput, int page) 
+        {
+            // todo: sp ?
+            string requete = @"SELECT * FROM BienEchange LEFT JOIN 
+                      AvisMembreBien ON AvisMembreBien.idBien = BienEchange.idBien left JOIN 
+                      Membre ON AvisMembreBien.idMembre = Membre.idMembre AND BienEchange.idMembre = Membre.idMembre left JOIN 
+                      MembreBienEchange ON BienEchange.idBien = MembreBienEchange.idBien AND Membre.idMembre = MembreBienEchange.idMembre left JOIN
+                      OptionsBien ON BienEchange.idBien = OptionsBien.idBien left JOIN
+                      Options ON OptionsBien.idOption = Options.idOption left JOIN
+                      Pays ON BienEchange.Pays = Pays.idPays";
+            if (!String.IsNullOrEmpty(userInput))
+            {
+                requete += " WHERE descCourte LIKE '%" + userInput + "%' ";
+            }
+            switch (sortBy)
+            {
+                case "capacite":
+                    requete += " ORDER BY NombrePerson DESC ";
+                    break;
+                default:
+                    requete += " ORDER BY NEWID()";
+                    break;
+            }
+            int biensAffiches = 5;
+            int pageSuivante = (page - 1) * 5;
+            requete += $@"  OFFSET {pageSuivante} ROWS 
+                                FETCH NEXT {biensAffiches} ROWS ONLY";
+            return base.Get(requete);
+        }
         public List<BienEchangeEntity> ObtenirLesBiensDepuisMembre(int idMembre)
         {
             //IL Y A UNE SP POUR CA !!

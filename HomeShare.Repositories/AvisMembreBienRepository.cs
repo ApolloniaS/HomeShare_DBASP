@@ -14,7 +14,7 @@ namespace HomeShare.Repositories
         {
         }
 
-        public List<AvisMembreBienEntity> obtenirAvisDepuisIdBien(int idBien)
+        public List<AvisMembreBienEntity> ObtenirAvisDepuisIdBien(int idBien)
         {
             string requete = "SELECT * FROM Vue_AvisMembres WHERE idBien = "+idBien;
             return base.Get(requete);

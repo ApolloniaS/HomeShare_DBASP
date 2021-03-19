@@ -14,13 +14,13 @@ namespace HomeShare.Repositories
         {
         }
 
-        public PaysEntity obtenirNomPaysDepuisId(int idPays)
+        public PaysEntity ObtenirNomPaysDepuisId(int idPays)
         {
             string requete = "SELECT libelle FROM Pays WHERE idPays = " + idPays;
             return base.GetOne(idPays, requete);
         }
 
-        public PaysEntity obtenirDrapeauDepuisIdBien(int idBien)
+        public PaysEntity ObtenirDrapeauDepuisIdBien(int idBien)
         {
             //TODO: générer une vue qui reprend cette requête, plus dRY !
             string requete = @"SELECT BienEchange.idBien, Pays.drapeau 

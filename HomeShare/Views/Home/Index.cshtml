@@ -39,54 +39,52 @@
 <div class="banner-search">
     <div class="container">
         <!-- banner -->
-        <h3>Rechercher...</h3>
+            <h3>Rechercher...</h3>
+            
         <div class="searchbar">
             <div class="row">
+                @using (Html.BeginForm("Biens", "Home", FormMethod.Get))
+                {
                 <div class="col-lg-6 col-sm-6">
-                    <input type="text" class="form-control" placeholder="Critère de recherche">
+                    <input style="color:black;" type="text" name="userInput" placeholder="Rechercher" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Rechercher'">
                     <div class="row">
                         <div class="col-lg-3 col-sm-3 ">
-                            <select name ="sortBy" class="form-control">
-                                <option value="pays">Pays</option>
-                                <option value="capacite">Nombre de personnes</option>
-                                <option value="jardin">Jardin</option>
-                                <option value="piscine">Piscine</option>
-                                <option value="lavage">Machine à laver</option>
-                                <option value="internet">Internet</option>
-                                <option value="animaux">Animaux admis</option>
+                            <select name="sortBy" class="form-control">
+                                <option value="capacite">@Html.ActionLink("Nombre de personnes", "Biens", new { sortBy = ViewBag.sortByNbPersonnes })</option>
                             </select>
                         </div>
                         @*<div class="col-lg-3 col-sm-4">
-                            <select class="form-control">
-                                <option>Price</option>
-                                <option>$150,000 - $200,000</option>
-                                <option>$200,000 - $250,000</option>
-                                <option>$250,000 - $300,000</option>
-                                <option>$300,000 - above</option>
-                            </select>
-                        </div>
+                <select class="form-control">
+                    <option>Price</option>
+                    <option>$150,000 - $200,000</option>
+                    <option>$200,000 - $250,000</option>
+                    <option>$250,000 - $300,000</option>
+                    <option>$300,000 - above</option>
+                </select>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+                <select class="form-control">
+                    <option>Property</option>
+                    <option>Apartment</option>
+                    <option>Building</option>
+                    <option>Office Space</option>
+                </select>
+            </div>*@
                         <div class="col-lg-3 col-sm-4">
-                            <select class="form-control">
-                                <option>Property</option>
-                                <option>Apartment</option>
-                                <option>Building</option>
-                                <option>Office Space</option>
-                            </select>
-                        </div>*@
-                        <div class="col-lg-3 col-sm-4">
-                            <button class="btn btn-success" onclick="window.location.href='/Home/Biens'">Rechercher</button>
+                            <button class="btn btn-success">Rechercher</button>
                         </div>
                     </div>
 
 
                 </div>
-                <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-                    <p>Connectez-vous pour procéder à l'échange de bien !</p>
-                    <button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Se connecter</button>
+                }
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+                        <p>Connectez-vous pour procéder à l'échange de bien !</p>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Se connecter</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 <!-- banner -->
 <div class="container">
