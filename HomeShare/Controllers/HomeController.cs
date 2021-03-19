@@ -36,5 +36,20 @@ namespace HomeShare.Controllers
 
             return View(bvm);
         }
+
+        public ActionResult About()
+        { 
+            return View(); 
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+        public ActionResult Proprio()
+        {
+            return View();
+        }
     }
 }

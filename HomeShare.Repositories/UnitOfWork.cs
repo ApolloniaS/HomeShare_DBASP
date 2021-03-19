@@ -37,6 +37,7 @@ namespace HomeShare.Repositories
                 (biens =>
                 new BienAEchangerModel()
                 {
+                    IdBien = biens.IdBien,
                     Photo = "/images/properties/" + biens.Photo,
                     IsEnabled = biens.IsEnabled,
                     Titre = biens.Titre,
