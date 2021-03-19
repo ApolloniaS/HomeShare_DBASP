@@ -34,8 +34,16 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="/Home/Index">Home</a></li>
                         <li><a href="/Home/About">A PROPOS DE NOUS</a></li>
-                        <li><a href="/Home/Proprio">LES PROPRIÉTAIRES</a></li>
                         <li><a href="/Home/Biens">LES BIENS EN ÉCHANGE</a></li>
+                        @if (HomeShare.Infra.SessionUtils.IsLogged)
+                        {
+                            <li><a href="/Membre/Home">ESPACE MEMBRE</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/Account/Login">ESPACE MEMBRE</a></li>
+
+                        }
                         <li><a href="/Home/Contact">CONTACTEZ-NOUS</a></li>
                     </ul>
                 </div>

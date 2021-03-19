@@ -41,30 +41,23 @@
             }
         </div>
         <div class="laisser-avis">
-            EN CONSTRUCTION ! 
-            Il sera bientôt possible de laisser un avis.
-            @*Donnez votre avis sur ce bien<br/>
-            --> ATTENTION BALISAGE A REVOIR !!!
-            <form action=/Membre/Home/laisserAvis method="post">
-                @Html.AntiForgeryToken()
-                <div class="form-group">
-            @Html.LabelFor(model => model.AvisMembre.Message, htmlAttributes: new { @class = "control-label col-md-2" })
-                
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AvisMembre.Message, new { htmlAttributes = new { @class = "form-control" } })
+            Donnez votre avis sur ce bien<br/>
+            <form method="post"> @*action=/Membre/Home/LaisserAvis*@ 
+            @*@Html.AntiForgeryToken()*@
+            
+            <div class="mt-10" style="width:10%;">
+                <input type="number" name="Note" placeholder="Note" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Note'" required>
+                @Html.ValidationMessageFor(model => model.AvisMembre.Note, "", new { @class = "text-danger" })
+            </div>
+            <div class="mt-10">
+                <textarea name="Message" class="Message" placeholder="Votre avis" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Avis'" required></textarea>
                 @Html.ValidationMessageFor(model => model.AvisMembre.Message, "", new { @class = "text-danger" })
             </div>
-                </div>
-                <div class="form-group">
-            @Html.LabelFor(model => model.AvisMembre.Note, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                @Html.EditorFor(model => model.AvisMembre.Note, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AvisMembre.Note, "", new { @class = "text-danger" })
-                </div>
-            @ViewBag.Error
-            <button type="submit" class="genric-btn primary">Envoyer l'avis</button>
+            <div class="mt-10">
+                <button type="submit" class="genric-btn primary">Valider l'avis</button>
+                
             </div>
-            </form>*@
+        </form>
         </div> 
     </div>
     <div class="info-proprio" style="width: 30%;width:20%; margin:auto">

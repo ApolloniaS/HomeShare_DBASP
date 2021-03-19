@@ -35,7 +35,8 @@ namespace HomeShare.Areas.Membre.Controllers
         }
 
         [HttpGet]
-        public ActionResult AjoutBien() {
+        public ActionResult AjoutBien()
+        {
             if (!SessionUtils.IsLogged) return RedirectToAction("Login", "Account", new { area = "" });
             else
             {
@@ -72,7 +73,7 @@ namespace HomeShare.Areas.Membre.Controllers
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult laisserAvis(int idBien, AvisMembreModel am)
+        //public ActionResult LaisserAvis(int idBien, AvisMembreModel am)
         //{
         //    if (!SessionUtils.IsLogged)
         //    {
@@ -88,7 +89,8 @@ namespace HomeShare.Areas.Membre.Controllers
         //    }
         //    return View();
 
-        //}
+            
 
+        //}
     }
 }

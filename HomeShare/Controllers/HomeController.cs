@@ -46,10 +46,5 @@ namespace HomeShare.Controllers
         {
             return View();
         }
-
-        public ActionResult Proprio()
-        {
-            return View();
-        }
     }
 }

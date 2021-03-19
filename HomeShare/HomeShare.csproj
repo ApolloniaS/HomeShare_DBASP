@@ -236,7 +236,6 @@
     <Content Include="Views\Shared\_paginate.cshtml" />
     <Content Include="Views\Shared\_enConstruction.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Proprio.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>

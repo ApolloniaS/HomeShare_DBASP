@@ -150,7 +150,6 @@ namespace HomeShare.Repositories
 
         }
 
-        // ajout d'un avis -- prob de récupération de l'idBien
         //public bool ajouterAvis(AvisMembreModel am, int idMembre, int idBien)
         //{
         //    AvisMembreBienEntity ae = new AvisMembreBienEntity()

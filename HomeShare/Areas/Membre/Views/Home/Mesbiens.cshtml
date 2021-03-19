@@ -47,8 +47,8 @@
             Suppression<br />
             @foreach (HomeShare.Models.BienAEchangerModel item in Model.ListeBiens)
             {
-                @*@:<a href="#">Supprimer</a><br />*@
-                @:<a href="@Url.Action("SupprimerBien", "Home", new { idBien = item.IdBien })">Supprimer</a>
+
+                @:<a href="@Url.Action("SupprimerBien", "Home", new { idBien = item.IdBien })">Supprimer</a><br />
 
             }
         </div>

@@ -37,7 +37,21 @@ namespace HomeShare.Repositories
 
         public bool Insert(AvisMembreBienEntity toInsert)
         {
-            throw new NotImplementedException();
+            string requete = @"INSERT INTO [dbo].[AvisMembreBien]
+           ([note]
+           ,[message]
+           ,[idMembre]
+           ,[idBien]
+           ,[DateAvis]
+           ,[Approuve])
+     VALUES
+           (@note
+           ,@message
+           ,@idMembre
+           ,@idBien
+           ,@DateAvis
+           ,@Approuve";
+            return base.Insert(toInsert, requete);
         }
 
         public bool Update(AvisMembreBienEntity toUpdate)
