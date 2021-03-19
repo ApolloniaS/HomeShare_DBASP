@@ -96,6 +96,7 @@ namespace HomeShare.Repositories
                         DescCourte = biens.DescCourte,
                         Drapeau = "/images/drapeaux/" + ((PaysRepository)_paysRepo).GetOne(biens.Pays).Drapeau,
                         NomPays = ((PaysRepository)_paysRepo).ObtenirNomPaysDepuisId(biens.Pays).Libelle,
+                        IsEnabled = biens.IsEnabled,
                     }
                     ).ToList();
         }
@@ -207,7 +208,7 @@ namespace HomeShare.Repositories
         public bool SupprimerUnBien(int idBien, int idMembre)
         {
             BienEchangeEntity be = new BienEchangeEntity()
-            {//todo: erreur sql multi part identifier... 
+            {
                 IdBien = idBien,
                 NombrePerson = _bienEchangeRepo.GetOne(idBien).NombrePerson,
                 Pays = _bienEchangeRepo.GetOne(idBien).Pays,

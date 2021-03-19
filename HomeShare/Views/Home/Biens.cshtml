@@ -13,6 +13,8 @@
 <div class="container-custo" style="width:90%;margin:auto;margin-top:1%;">
     @foreach (HomeShare.Models.BienAEchangerModel item in Model.TousLesBiens)
     {
+        if (item.IsEnabled == true)
+        {
         <div class="bien-custo" style="display:flex;border:1px solid black;justify-content:space-between;margin-bottom: 1%;align-items:center;padding-left:1%;padding-right: 1%;">
             <div style="width:15%;">@item.Titre</div>
             <div style="width:15%;"><img style="width:100%; object-fit: contain;" src="@item.Photo" /></div>
@@ -24,6 +26,7 @@
             </div>
             <a href="@Url.Action("Fiche", "Home", new { idBien = item.IdBien })">Sélectionner ce bien</a>
         </div>
+        }
     }
 </div>
 @{
