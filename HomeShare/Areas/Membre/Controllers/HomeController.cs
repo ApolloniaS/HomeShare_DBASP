@@ -48,12 +48,12 @@ namespace HomeShare.Areas.Membre.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AjoutBien(BienAEchangerModel bm)
         {
-            if (!SessionUtils.IsLogged)
+            if (SessionUtils.IsLogged)
             {//todo: check pq le modèle n'est pas valide
                 if (ModelState.IsValid)
                 {
                     uow.AjouterBien(bm, SessionUtils.ConnectedUser.IdMembre);
-                    return View("Avis ajouté !");
+                    return RedirectToAction("MesBiens", "Home", new { area = "Membre" });
                 }
                 else
                 {

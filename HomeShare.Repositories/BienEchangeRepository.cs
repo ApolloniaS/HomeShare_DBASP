@@ -87,7 +87,23 @@ namespace HomeShare.Repositories
 
         public bool Insert(BienEchangeEntity toInsert)
         {
-            string requete = "INSERT INTO BienEchange (NombrePerson, Pays, IdMembre, Titre, DescCourte, DescLong, Ville, Rue, CodePostal, Photo, Latitude, Longitude, AssuranceObligatoire, DateCreation) VALUES (@NombrePerson, @Pays, @IdMembre, @Titre, @DescCourte, @DescLong, @Ville, @Rue, @CodePostal, @Photo, @Latitude, @Longitude, @AssuranceObligatoire, @DateCreation)";
+            string requete = @"INSERT INTO BienEchange ([titre]
+           ,[DescCourte]
+           ,[DescLong]
+           ,[NombrePerson]
+           ,[Pays]
+           ,[Ville]
+           ,[Rue]
+           ,[Numero]
+           ,[CodePostal]
+           ,[Photo]
+           ,[AssuranceObligatoire]
+           ,[isEnabled]
+           ,[DisabledDate]
+           ,[Latitude]
+           ,[Longitude]
+           ,[idMembre]
+           ,[DateCreation]) VALUES (@Titre, @DescCourte, @DescLong, @NombrePerson, @Pays, @Ville, @Rue, @Numero, @CodePostal, @Photo, @AssuranceObligatoire, @isEnabled, @DisabledDate, @Latitude, @Longitude, @IdMembre, @DateCreation)";
             return base.Insert(toInsert, requete);
         }
 

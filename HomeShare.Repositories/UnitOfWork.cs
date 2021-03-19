@@ -181,26 +181,29 @@ namespace HomeShare.Repositories
         }
 
         public bool AjouterBien(BienAEchangerModel bm, int idmembre)
-        {
+        { //todo: les valeurs récupérées sont nulles !
             BienEchangeEntity be = new BienEchangeEntity()
             {
-                NombrePerson = bm.NombrePersonne,
-                Pays = bm.Pays,
-                IdMembre = idmembre,
                 Titre = bm.Titre,
                 DescCourte = bm.DescCourte,
                 DescLong = bm.DescLongue,
+                NombrePerson = bm.NombrePersonne,
+                Pays = bm.Pays,
                 Ville = bm.Ville,
-                Numero = bm.Numero,
                 Rue = bm.Rue,
+                Numero = bm.Numero,
                 CodePostal = bm.CodePostal,
-                //faire l'upload !!
-                Photo = "à venir upload",
+                // todo: mettre en place l'upload
+                Photo = "photopardefaut.jpg",
+                AssuranceObligatoire = bm.AssuranceObligatoire,
+                IsEnabled = true,
+                // todo: devrait être null
+                DisabledDate = DateTime.Now,
                 Latitude = bm.Latitude,
                 Longitude = bm.Longitude,
-                AssuranceObligatoire = bm.AssuranceObligatoire,
+                IdMembre = idmembre,
                 DateCreation = DateTime.Now,
-                IsEnabled = true
+                
     };
             return _bienEchangeRepo.Insert(be);
         }
