@@ -36,17 +36,28 @@
             }
         </div>
         <div>
-            Modifier
+            Modifcation<br />
+            @foreach (HomeShare.Models.BienAEchangerModel item in Model.ListeBiens)
+            {
+                @:<a href="#">Modifier</a><br />
+                @*<a href="@Url.Action("ModifierBien", "Home", new { area = "Membre"}, new { idBien = item.IdBien })">Modifier</a>*@
+            }
         </div>
         <div>
-            Supprimer
+            Suppression<br />
+            @foreach (HomeShare.Models.BienAEchangerModel item in Model.ListeBiens)
+            {
+                @:<a href="#">Supprimer</a><br />
+                @*<a href="@Url.Action("SupprimerBien", "Home", new { area = "Membre"}, new { idBien = item.IdBien })">Modifier</a>*@
+
+            }
         </div>
 
-    </div>
-    <div class="side-bar-zone-membre" style="width:30%;">
-        @{
-            Html.RenderPartial("~/Views/Shared/_infoProprio.cshtml");
-        }
-    </div>
+                </div>
+                <div class="side-bar-zone-membre" style="width:30%;">
+                    @{
+                        Html.RenderPartial("~/Views/Shared/_infoProprio.cshtml");
+                    }
+                </div>
 
-</div>
+            </div>

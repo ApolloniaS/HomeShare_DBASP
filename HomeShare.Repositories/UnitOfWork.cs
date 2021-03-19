@@ -177,6 +177,31 @@ namespace HomeShare.Repositories
                     DateCreation = bien.DateCreation,
                 }).ToList();
         }
+
+        public bool AjouterBien(BienAEchangerModel bm, int idmembre)
+        {
+            BienEchangeEntity be = new BienEchangeEntity()
+            {
+                NombrePerson = bm.NombrePersonne,
+                Pays = bm.Pays,
+                IdMembre = idmembre,
+                Titre = bm.Titre,
+                DescCourte = bm.DescCourte,
+                DescLong = bm.DescLongue,
+                Ville = bm.Ville,
+                Numero = bm.Numero,
+                Rue = bm.Rue,
+                CodePostal = bm.CodePostal,
+                //faire l'upload !!
+                Photo = "à venir upload",
+                Latitude = bm.Latitude,
+                Longitude = bm.Longitude,
+                AssuranceObligatoire = bm.AssuranceObligatoire,
+                DateCreation = DateTime.Now,
+                IsEnabled = true
+    };
+            return _bienEchangeRepo.Insert(be);
+        }
         #endregion
 
         #region INSCRIPTION ET CONNEXION

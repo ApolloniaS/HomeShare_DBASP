@@ -9,7 +9,7 @@ namespace HomeShare.Entities
     public class BienEchangeEntity
     {
         private int _idBien, _nombrePerson, _pays, _idMembre;
-        private string _titre, descCourte, descLongue, _ville, _rue, _numero, _codePostal, _photo, _latitude, _longitude;
+        private string _titre, descCourte, descLong, _ville, _rue, _numero, _codePostal, _photo, _latitude, _longitude;
         private bool _assuranceObligatoire, _isEnabled;
         private DateTime _disabledDate, _dateCreation;
 
@@ -19,7 +19,7 @@ namespace HomeShare.Entities
         public int IdMembre { get => _idMembre; set => _idMembre = value; }
         public string Titre { get => _titre; set => _titre = value; }
         public string DescCourte { get => descCourte; set => descCourte = value; }
-        public string DescLongue { get => descLongue; set => descLongue = value; }
+        public string DescLong { get => descLong; set => descLong = value; }
         public string Ville { get => _ville; set => _ville = value; }
         public string Rue { get => _rue; set => _rue = value; }
         public string Numero { get => _numero; set => _numero = value; }

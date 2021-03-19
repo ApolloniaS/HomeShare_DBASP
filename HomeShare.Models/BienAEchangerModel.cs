@@ -8,7 +8,7 @@ namespace HomeShare.Models
 {
     public class BienAEchangerModel
     {
-        private string _photo, _titre, _codePostal, _ville, _descCourte, _nomPays, _drapeau;
+        private string _photo, _titre, _codePostal, _ville, _descCourte, _nomPays, _drapeau, _descLongue, _rue, _latitude, _longitude, _numero;
         private bool _assuranceObligatoire, _isEnabled;
         private int _idBien, _pays, _nombrePersonne;
         private DateTime _dateCreation;
@@ -35,5 +35,10 @@ namespace HomeShare.Models
         public string DescFiche { get => _descFiche; set => _descFiche = value; }
         public string DrapeauFiche { get => _drapeauFiche; set => _drapeauFiche = value; }
         public DateTime DateCreation { get => _dateCreation; set => _dateCreation = value; }
+        public string DescLongue { get => _descLongue; set => _descLongue = value; }
+        public string Rue { get => _rue; set => _rue = value; }
+        public string Latitude { get => _latitude; set => _latitude = value; }
+        public string Longitude { get => _longitude; set => _longitude = value; }
+        public string Numero { get => _numero; set => _numero = value; }
     }
 }

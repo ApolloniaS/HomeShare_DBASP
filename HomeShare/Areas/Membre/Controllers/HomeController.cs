@@ -33,7 +33,42 @@ namespace HomeShare.Areas.Membre.Controllers
                 return View(mpm);
             }
         }
-        
+
+        [HttpGet]
+        public ActionResult AjoutBien() {
+            if (!SessionUtils.IsLogged) return RedirectToAction("Login", "Account", new { area = "" });
+            else
+            {
+                MembreProfilModel mpm = new MembreProfilModel();
+                return View(mpm);
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AjoutBien(BienAEchangerModel bm)
+        {
+            if (!SessionUtils.IsLogged)
+            {//todo: check pq le modèle n'est pas valide
+                if (ModelState.IsValid)
+                {
+                    uow.AjouterBien(bm, SessionUtils.ConnectedUser.IdMembre);
+                    return View("Avis ajouté !");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult SupprimerBien(int id)
+        {
+            return View();
+        }
+
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public ActionResult laisserAvis(int idBien, AvisMembreModel am)
@@ -51,7 +86,7 @@ namespace HomeShare.Areas.Membre.Controllers
         //        }
         //    }
         //    return View();
-            
+
         //}
 
     }

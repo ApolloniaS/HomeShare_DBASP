@@ -21,9 +21,8 @@ namespace HomeShare.Controllers
 
         public ActionResult Biens(string sortBy = "", string userInput = null, int page = 1)
         {
-
-            ViewBag.sortByNbPersonnes = sortBy == "capacite" ? "nombrePerson_desc" : "";
-
+            
+            ViewBag.sortByNbPersonnes = sortBy == "Capacite" ? "NombrePerson_desc" : "";
             BiensViewModel bvm = new BiensViewModel();
             bvm.paginationBiens(sortBy, userInput, page);
             return View(bvm);

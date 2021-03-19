@@ -206,6 +206,7 @@
     <Content Include="Areas\Membre\Views\Home\Index.cshtml" />
     <Content Include="Areas\Membre\Views\Home\Mesbiens.cshtml" />
     <Content Include="Views\Shared\_infoProprio.cshtml" />
+    <Content Include="Areas\Membre\Views\Home\AjoutBien.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

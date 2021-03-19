@@ -30,7 +30,7 @@ namespace HomeShare.Repositories
             }
             switch (sortBy)
             {
-                case "capacite":
+                case "Capacite":
                     requete += " ORDER BY NombrePerson DESC ";
                     break;
                 default:
@@ -86,7 +86,8 @@ namespace HomeShare.Repositories
 
         public bool Insert(BienEchangeEntity toInsert)
         {
-            throw new NotImplementedException();
+            string requete = "INSERT INTO BienEchange (NombrePerson, Pays, IdMembre, Titre, DescCourte, DescLong, Ville, Rue, CodePostal, Photo, Latitude, Longitude, AssuranceObligatoire, DateCreation) VALUES (@NombrePerson, @Pays, @IdMembre, @Titre, @DescCourte, @DescLong, @Ville, @Rue, @CodePostal, @Photo, @Latitude, @Longitude, @AssuranceObligatoire, @DateCreation";
+            return base.Insert(toInsert, requete);
         }
 
         public bool Update(BienEchangeEntity toUpdate)
