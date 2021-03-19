@@ -121,10 +121,26 @@ namespace HomeShare.Repositories
                         Note = avis.Note,
                         Login = _membreRepo.GetOne(avis.IdMembre).Login
                     }
-                    ).ToList()
+                    ).ToList(),
+                NomDuProprio = ((MembreRepository)_membreRepo).ObtenirProprioDepuisIdBien(id).Nom + " " + ((MembreRepository)_membreRepo).ObtenirProprioDepuisIdBien(id).Prenom,
             };
 
-        } 
+        }
+
+        // ajout d'un avis -- prob de récupération de l'idBien
+        //public bool ajouterAvis(AvisMembreModel am, int idMembre, int idBien)
+        //{
+        //    AvisMembreBienEntity ae = new AvisMembreBienEntity()
+        //    {
+        //        IdMembre = idMembre,
+        //        IdBien = idBien,
+        //        Message = am.Message,
+        //        Note = am.Note,
+        //        DateAvis = DateTime.Now,
+        //        Approuve = false
+        //    };
+        //    return _avisMembreRepo.Insert(ae);
+        //}
         #endregion
 
         #region INSCRIPTION ET CONNEXION

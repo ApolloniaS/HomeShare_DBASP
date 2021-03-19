@@ -40,8 +40,48 @@
             </div>
             }
         </div>
+        <div class="laisser-avis">
+            EN CONSTRUCTION ! 
+            Il sera bientôt possible de laisser un avis.
+            @*Donnez votre avis sur ce bien<br/>
+            --> ATTENTION BALISAGE A REVOIR !!!
+            <form action=/Membre/Home/laisserAvis method="post">
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+            @Html.LabelFor(model => model.AvisMembre.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+                
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AvisMembre.Message, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AvisMembre.Message, "", new { @class = "text-danger" })
+            </div>
+                </div>
+                <div class="form-group">
+            @Html.LabelFor(model => model.AvisMembre.Note, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                @Html.EditorFor(model => model.AvisMembre.Note, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AvisMembre.Note, "", new { @class = "text-danger" })
+                </div>
+            @ViewBag.Error
+            <button type="submit" class="genric-btn primary">Envoyer l'avis</button>
+            </div>
+            </form>*@
+        </div> 
     </div>
-    <div class="info-proprio" style="width: 30%;border:1px black solid;">partie proprio</div>
+    <div class="info-proprio" style="width: 30%;width:20%; margin:auto">
+        <div>
+            <div class="avatar-custo" style="width: 75px;height:75px;background-color:black;color:white;">
+                Place pour avatar<br />
+            </div>
+            Nom et prénom du propriétaire&nbsp;: @Model.Fiche.NomDuProprio
+
+        </div>
+        <hr />
+        <div><button>Échanger le bien</button></div>
+        <hr />
+        <div class="meteo-custo" style="width: 75px;height:75px;background-color:black;color:white;">
+            Place pour météo à venir<br />
+        </div>
+    </div>
 </div>
 
 

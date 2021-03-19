@@ -10,7 +10,13 @@ namespace HomeShare.Repositories
 {
     public class MembreRepository : BaseRepository<MembreEntity>, IConcreteRepository<MembreEntity>
     {
-
+        public MembreEntity ObtenirProprioDepuisIdBien(int idBien)
+        {
+            string requete = @"SELECT BienEchange.idBien, Membre.Nom, Membre.Prenom FROM BienEchange INNER JOIN 
+                         Membre ON BienEchange.idMembre = Membre.idMembre 
+                         WHERE idBien = "+idBien ;
+            return base.GetOne(idBien, requete);
+        }
         public MembreEntity GetFromLogin(string login)
         {
             //sans la vérif du password, à faire si temps

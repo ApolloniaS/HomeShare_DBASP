@@ -8,7 +8,7 @@ namespace HomeShare.Models
 {
     public class FicheModel
     {
-        string _photo, _titre, _descLongue, _drapeau;
+        string _photo, _titre, _descLongue, _drapeau, _nomDuProprio;
         int _idBien, _nombrePersonnes;
         private List<AvisMembreModel> _avisMembre;
         public string Photo { get => _photo; set => _photo = value; }
@@ -18,5 +18,6 @@ namespace HomeShare.Models
         public string Drapeau { get => _drapeau; set => _drapeau = value; }
         public int IdBien { get => _idBien; set => _idBien = value; }
         public List<AvisMembreModel> AvisMembre { get => _avisMembre; set => _avisMembre = value; }
+        public string NomDuProprio { get => _nomDuProprio; set => _nomDuProprio = value; }
     }
 }

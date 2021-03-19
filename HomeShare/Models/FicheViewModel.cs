@@ -11,6 +11,7 @@ namespace HomeShare.Models
     {
         UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
         private FicheModel _fiche;
+        //private AvisMembreModel _avisMembre;
 
         public FicheViewModel(int id)
         {
@@ -18,5 +19,6 @@ namespace HomeShare.Models
         }
 
         public FicheModel Fiche { get => _fiche; set => _fiche = value; }
+        //public AvisMembreModel AvisMembre { get => _avisMembre; set => _avisMembre = value; }
     }
 }
