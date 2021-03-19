@@ -172,6 +172,7 @@ namespace HomeShare.Repositories
                 bien =>
                 new BienAEchangerModel
                 {
+                    IdBien = bien.IdBien,
                     Titre = bien.Titre,
                     DescCourte = bien.DescCourte,
                     DateCreation = bien.DateCreation,
@@ -201,6 +202,32 @@ namespace HomeShare.Repositories
                 IsEnabled = true
     };
             return _bienEchangeRepo.Insert(be);
+        }
+
+        public bool SupprimerUnBien(int idBien, int idMembre)
+        {
+            BienEchangeEntity be = new BienEchangeEntity()
+            {//todo: erreur sql multi part identifier... 
+                IdBien = idBien,
+                NombrePerson = _bienEchangeRepo.GetOne(idBien).NombrePerson,
+                Pays = _bienEchangeRepo.GetOne(idBien).Pays,
+                IdMembre = idMembre,
+                Titre = _bienEchangeRepo.GetOne(idBien).Titre,
+                DescCourte = _bienEchangeRepo.GetOne(idBien).DescCourte,
+                DescLong = _bienEchangeRepo.GetOne(idBien).DescLong,
+                Ville = _bienEchangeRepo.GetOne(idBien).Ville,
+                Numero = _bienEchangeRepo.GetOne(idBien).Numero,
+                Rue = _bienEchangeRepo.GetOne(idBien).Rue,
+                CodePostal = _bienEchangeRepo.GetOne(idBien).CodePostal,
+                Photo = _bienEchangeRepo.GetOne(idBien).Photo,
+                Latitude = _bienEchangeRepo.GetOne(idBien).Latitude,
+                Longitude = _bienEchangeRepo.GetOne(idBien).Longitude,
+                AssuranceObligatoire = _bienEchangeRepo.GetOne(idBien).AssuranceObligatoire,
+                DateCreation = _bienEchangeRepo.GetOne(idBien).DateCreation,
+                IsEnabled = false,
+                DisabledDate = DateTime.Now,
+            };
+            return _bienEchangeRepo.Update(be);
         }
         #endregion
 

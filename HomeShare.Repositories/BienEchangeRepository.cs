@@ -81,18 +81,35 @@ namespace HomeShare.Repositories
 
         public BienEchangeEntity GetOne(int PK)
         {
-            throw new NotImplementedException();
+            string requete = "SELECT * FROM BienEchange WHERE idBien = " + PK;
+            return base.GetOne(PK, requete);
         }
 
         public bool Insert(BienEchangeEntity toInsert)
         {
-            string requete = "INSERT INTO BienEchange (NombrePerson, Pays, IdMembre, Titre, DescCourte, DescLong, Ville, Rue, CodePostal, Photo, Latitude, Longitude, AssuranceObligatoire, DateCreation) VALUES (@NombrePerson, @Pays, @IdMembre, @Titre, @DescCourte, @DescLong, @Ville, @Rue, @CodePostal, @Photo, @Latitude, @Longitude, @AssuranceObligatoire, @DateCreation";
+            string requete = "INSERT INTO BienEchange (NombrePerson, Pays, IdMembre, Titre, DescCourte, DescLong, Ville, Rue, CodePostal, Photo, Latitude, Longitude, AssuranceObligatoire, DateCreation) VALUES (@NombrePerson, @Pays, @IdMembre, @Titre, @DescCourte, @DescLong, @Ville, @Rue, @CodePostal, @Photo, @Latitude, @Longitude, @AssuranceObligatoire, @DateCreation)";
             return base.Insert(toInsert, requete);
         }
 
         public bool Update(BienEchangeEntity toUpdate)
         {
-            throw new NotImplementedException();
+            string requete = @"UPDATE BienEchange SET [titre] = @Titre, [DescCourte] = @DescCourte
+      ,[DescLong] = @DescLong
+      ,[NombrePerson] = @NombrePerson
+      ,[Pays] = @Pays
+      ,[Ville] = @Ville
+      ,[Rue] = @Rue
+      ,[Numero] = @Numero
+      ,[CodePostal] = @CodePostal
+      ,[Photo] = @Photo
+      ,[AssuranceObligatoire] = @AssuranceObligatoire
+      ,[isEnabled] = 0
+      ,[DisabledDate] = GETDATE()
+      ,[Latitude] = @Latitude
+      ,[Longitude] = @Longitude
+      ,[idMembre] = @idMembre
+      ,[DateCreation] = @DateCreation WHERE idBien = @idBien";
+            return base.Update(toUpdate, requete);
         }
     }
 }

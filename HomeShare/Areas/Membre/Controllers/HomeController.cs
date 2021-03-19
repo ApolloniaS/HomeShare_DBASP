@@ -64,9 +64,10 @@ namespace HomeShare.Areas.Membre.Controllers
         }
 
         [HttpGet]
-        public ActionResult SupprimerBien(int id)
+        public ActionResult SupprimerBien(int idBien)
         {
-            return View();
+            uow.SupprimerUnBien(idBien, SessionUtils.ConnectedUser.IdMembre);
+            return RedirectToAction("Index", "Home", new { area = "Membre" });
         }
 
         //[HttpPost]
